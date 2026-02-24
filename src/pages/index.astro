@@ -148,6 +148,25 @@ const skills = [
       </div>
     </section>
 
+    <!-- ─── STAGE PHOTO ──────────────────────────────────────────── -->
+    <section class="stage-photo">
+      <figure class="stage-photo__portrait">
+        <img
+          src="/gareth-vishen-stage.jpg"
+          alt="Gareth Winter on stage at Mindvalley Universe Amsterdam 2025"
+          loading="lazy"
+        />
+      </figure>
+      <figure class="stage-photo__wide">
+        <img
+          src="/mvu-amsterdam-stage.jpg"
+          alt="Mindvalley Universe Amsterdam 2025 — Gareth Winter presenting on the main stage"
+          loading="lazy"
+        />
+        <figcaption>Mindvalley Universe, Amsterdam 2025</figcaption>
+      </figure>
+    </section>
+
     <!-- ─── PHILOSOPHY ───────────────────────────────────────────── -->
     <section class="philosophy">
       <div class="container">
@@ -418,6 +437,71 @@ const skills = [
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--text-mid);
+  }
+
+  /* ── Stage Photo ───────────────────────────────────────────── */
+  .stage-photo {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 900px) {
+    .stage-photo {
+      grid-template-columns: 3fr 5fr;
+    }
+  }
+
+  .stage-photo figure {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .stage-photo__portrait {
+    background: #1a1a1a;
+    aspect-ratio: 4/5;
+  }
+
+  @media (min-width: 900px) {
+    .stage-photo__portrait {
+      aspect-ratio: auto;
+      min-height: 560px;
+    }
+  }
+
+  .stage-photo__wide {
+    background: #0d0d0d;
+    aspect-ratio: 16/9;
+  }
+
+  @media (min-width: 900px) {
+    .stage-photo__wide {
+      aspect-ratio: auto;
+    }
+  }
+
+  .stage-photo figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .stage-photo__portrait img {
+    object-position: center 15%;
+  }
+
+  .stage-photo figcaption {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.5rem;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
   }
 
   /* ── Philosophy ────────────────────────────────────────────── */
