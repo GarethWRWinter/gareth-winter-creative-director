@@ -32,7 +32,7 @@ const experience = [
   },
   {
     brand: "Le Blanq",
-    role: "Creative",
+    role: "Creative Director",
     period: "2021 – 2022",
     stat: null,
     description:
@@ -78,13 +78,13 @@ const work = [
   },
   {
     brand: "Sky",
-    title: "Inclusion Week 2019",
-    id: "iHf4bdoi5tQ",
+    title: "Sky Loves Cycling",
+    id: "HZXUrW6yYcQ",
   },
   {
-    brand: "Veloforte",
-    title: "Brand Film",
-    id: "vR1VXrImHuA",
+    brand: "Team Sky",
+    title: "Ride On",
+    id: "gDqoS9YOrJ8",
   },
 ];
 ---
@@ -144,9 +144,13 @@ const work = [
               element by one percent and the compound effect is extraordinary.
               I was not just working inside that culture. I was a student of
               it. That thinking became the operating system behind everything
-              I have built since. Twenty years, every scale, inside genuinely
-              high-performance organisations. The discipline does not change.
-              The results follow.
+              I have built since. James Clear later used Sir David's marginal
+              gains philosophy as the central case study in Atomic Habits —
+              one of the most-read performance books of the past decade. When
+              I was inside that culture, it was not a concept. It was the way
+              we worked every single day. Twenty years, every scale, inside
+              genuinely high-performance organisations. The discipline does
+              not change. The results follow.
             </p>
             <p>
               I am not just a director of people. I shoot. I write. I direct.
@@ -183,17 +187,17 @@ const work = [
       <figure class="stage-photo__portrait">
         <img
           src="/gareth-vishen-stage.jpg"
-          alt="Gareth Winter on stage at Mindvalley Universe Amsterdam 2025"
+          alt="Gareth Winter on stage at Mindvalley U Event Amsterdam 2025"
           loading="lazy"
         />
       </figure>
       <figure class="stage-photo__wide">
         <img
           src="/mvu-amsterdam-stage.jpg"
-          alt="Mindvalley Universe Amsterdam 2025 — Gareth Winter presenting on the main stage"
+          alt="Mindvalley U Event Amsterdam 2025 — Gareth Winter presenting on the main stage"
           loading="lazy"
         />
-        <figcaption>Mindvalley Universe, Amsterdam 2025</figcaption>
+        <figcaption>Mindvalley U Event, Amsterdam 2025</figcaption>
       </figure>
     </section>
 
@@ -233,17 +237,55 @@ const work = [
       </div>
     </section>
 
+    <!-- ─── SKY ON-SET PHOTOS ────────────────────────────────────── -->
+    <section class="onset-photos">
+      <div class="container">
+        <p class="onset-photos__label">Sky — On Set</p>
+      </div>
+      <div class="onset-photos__grid">
+        <figure>
+          <img
+            src="/sky-production/sky-onset-1.jpg"
+            alt="Gareth Winter directing on set for Sky cycling production"
+            loading="lazy"
+          />
+        </figure>
+        <figure>
+          <img
+            src="/sky-production/sky-onset-2.jpg"
+            alt="Sky cycling shoot production"
+            loading="lazy"
+          />
+        </figure>
+        <figure>
+          <img
+            src="/sky-production/sky-onset-3.jpg"
+            alt="Team Sky on-set production"
+            loading="lazy"
+          />
+        </figure>
+        <figure>
+          <img
+            src="/sky-production/sky-onset-4.jpg"
+            alt="Sky on-set direction — cycling"
+            loading="lazy"
+          />
+        </figure>
+      </div>
+    </section>
+
     <!-- ─── SELECTED WORK ──────────────────────────────────────────── -->
     <section class="work">
       <div class="container">
         <h2 class="section-title">Selected Work</h2>
         <div class="work__grid">
           {work.map((item) => (
-            <a
+            <div
               class="work__item"
-              href={`https://www.youtube.com/watch?v=${item.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              data-video-id={item.id}
+              role="button"
+              tabindex="0"
+              aria-label={`Play ${item.title}`}
             >
               <div
                 class="work__thumb"
@@ -259,10 +301,38 @@ const work = [
                 <p class="work__brand">{item.brand}</p>
                 <p class="work__title">{item.title}</p>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
+    </section>
+
+    <!-- ─── SOCIAL REELS ───────────────────────────────────────────── -->
+    <section class="reels">
+      <div class="container">
+        <h2 class="section-title">From the Feed</h2>
+        <div class="reels__grid">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/mindvalley/reel/DExhphvggg3/"
+            data-instgrm-version="14"
+            style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; max-width:100%; min-width:326px; padding:0; width:99.375%;"
+          ></blockquote>
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/DKHMy7fBcDJ/"
+            data-instgrm-version="14"
+            style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; max-width:100%; min-width:326px; padding:0; width:99.375%;"
+          ></blockquote>
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/mindvalley/reel/DEqSTF5z8eG/"
+            data-instgrm-version="14"
+            style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; max-width:100%; min-width:326px; padding:0; width:99.375%;"
+          ></blockquote>
+        </div>
+      </div>
+      <script async src="//www.instagram.com/embed.js"></script>
     </section>
 
     <!-- ─── SKILLS ─────────────────────────────────────────────────── -->
@@ -315,6 +385,25 @@ const work = [
         </div>
       </div>
     </section>
+
+    <script>
+      // Inline YouTube playback
+      document.querySelectorAll('.work__item[data-video-id]').forEach(function(item) {
+        function playVideo() {
+          var id = item.dataset.videoId;
+          var thumb = item.querySelector('.work__thumb');
+          thumb.style.backgroundImage = 'none';
+          thumb.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+        }
+        item.addEventListener('click', playVideo);
+        item.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            playVideo();
+          }
+        });
+      });
+    </script>
 
   </body>
 </html>
@@ -663,6 +752,55 @@ const work = [
     }
   }
 
+  /* ── On-Set Photos ─────────────────────────────────────────── */
+  .onset-photos {
+    background: var(--black);
+    padding-top: clamp(2rem, 5vw, 3.5rem);
+    padding-bottom: 0;
+  }
+
+  .onset-photos__label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .onset-photos__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  @media (min-width: 700px) {
+    .onset-photos__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .onset-photos__grid figure {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    background: #1a1a1a;
+  }
+
+  .onset-photos__grid figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .onset-photos__grid figure:hover img {
+    transform: scale(1.04);
+  }
+
   /* ── Selected Work ─────────────────────────────────────────── */
   .work {
     background: var(--white);
@@ -682,9 +820,9 @@ const work = [
   }
 
   .work__item {
-    text-decoration: none;
     color: var(--black);
     display: block;
+    cursor: pointer;
   }
 
   .work__thumb {
@@ -739,6 +877,31 @@ const work = [
     font-weight: 400;
     color: var(--black);
     line-height: 1.4;
+  }
+
+  /* ── Social Reels ──────────────────────────────────────────── */
+  .reels {
+    background: var(--off-white);
+    padding: clamp(4rem, 10vw, 8rem) 0;
+    border-top: 1px solid var(--grey);
+  }
+
+  .reels__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 700px) {
+    .reels__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .reels__grid .instagram-media {
+    margin: 0 auto !important;
+    min-width: 0 !important;
+    width: 100% !important;
   }
 
   /* ── Skills ────────────────────────────────────────────────── */
