@@ -1,0 +1,527 @@
+---
+const meta = {
+  title: "Gareth Winter — Creative Director",
+  description: "Creative Director with 20 years building brands, leading teams, and driving growth at Sky, Veloforte, Go City, and Mindvalley.",
+  url: "https://garethwintercreativedirector.com",
+};
+
+const experience = [
+  {
+    brand: "Mindvalley",
+    role: "Creative Director",
+    period: "2024 – Present",
+    stat: null,
+    description:
+      "Defining and executing creative strategy. Overseeing creative projects, leading teams and culture, developing talent, and evolving brand, visual and verbal identity.",
+  },
+  {
+    brand: "Go City",
+    role: "Creative Director",
+    period: "2024",
+    stat: "30% growth in month one",
+    description:
+      "Global private equity travel and attraction company. Led a team of creatives and designers — streamlining processes, project management, workflows, and evolving the brand.",
+  },
+  {
+    brand: "Veloforte",
+    role: "Creative Director",
+    period: "2022 – 2023",
+    stat: "93% revenue growth in 18 months",
+    description:
+      "Built and led the creative team from the ground up. Established Veloforte as the category leader in natural sports nutrition. Directed all productions, developed brand language and tone of voice, and led B2B, ambassador, and influencer programmes.",
+  },
+  {
+    brand: "Sky",
+    role: "Senior Creative",
+    period: "2010 – 2021",
+    stat: "1.7 million people inspired to cycle",
+    description:
+      "Eleven years at one of the world's great media companies. Communicated Team Sky's Tour de France victories and Team GB's Olympic gold medals. Worked with sporting legends, actors, journalists, and on-screen talent. Led creative across Sky Sports, Sky News, and major corporate initiatives including Sky Ocean Rescue.",
+  },
+];
+
+const skills = [
+  "Creative Direction",
+  "Art Direction & Design",
+  "Brand Strategy",
+  "Copywriting & Scriptwriting",
+  "Filmmaking & Photography",
+  "Directing & Shoot Production",
+  "Packaging & Product Design",
+  "Digital & OOH Advertising",
+  "Social Media & Influencer",
+  "B2B & Retail Partnerships",
+  "Team Leadership & Culture",
+  "Marketing Strategy & Insight",
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:url" content={meta.url} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <!-- ─── HERO ─────────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero__inner">
+        <p class="hero__eyebrow">Creative Director</p>
+        <h1 class="hero__name">Gareth<br />Winter</h1>
+        <p class="hero__tagline">
+          Twenty years building brands, leading teams,<br />
+          and turning creative strategy into measurable growth.
+        </p>
+        <a href="#contact" class="hero__cta">Get in touch</a>
+      </div>
+    </section>
+
+    <!-- ─── INTRO ─────────────────────────────────────────────────── -->
+    <section class="intro">
+      <div class="container">
+        <div class="intro__grid">
+          <div class="intro__statement">
+            <p>
+              I have spent two decades at the intersection of creativity and
+              commercial performance. From an eleven-year run at Sky — one of
+              the world's great media businesses — to building the creative
+              function at Veloforte from scratch and driving 93% revenue growth
+              in eighteen months. I know how to build brands people care about.
+            </p>
+            <p>
+              My background spans TV, sports, e-commerce, and health. I bring
+              big-business rigour and small-business agility. I build teams,
+              develop talent, and create the conditions for exceptional work.
+            </p>
+          </div>
+          <div class="intro__credentials">
+            <div class="credential">
+              <span class="credential__number">20+</span>
+              <span class="credential__label">Years in the industry</span>
+            </div>
+            <div class="credential">
+              <span class="credential__number">93%</span>
+              <span class="credential__label">Revenue growth at Veloforte</span>
+            </div>
+            <div class="credential">
+              <span class="credential__number">1.7M</span>
+              <span class="credential__label">People inspired to cycle at Sky</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── EXPERIENCE ─────────────────────────────────────────────── -->
+    <section class="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience__list">
+          {
+            experience.map((role) => (
+              <article class="role">
+                <div class="role__header">
+                  <div class="role__meta">
+                    <span class="role__brand">{role.brand}</span>
+                    <span class="role__period">{role.period}</span>
+                  </div>
+                  <p class="role__title">{role.role}</p>
+                  {role.stat && (
+                    <p class="role__stat">{role.stat}</p>
+                  )}
+                </div>
+                <p class="role__description">{role.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SKILLS ─────────────────────────────────────────────────── -->
+    <section class="skills">
+      <div class="container">
+        <h2 class="section-title">What I Do</h2>
+        <ul class="skills__grid">
+          {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─────────────────────────────────────────────────── -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="contact__heading">Let's talk.</h2>
+        <p class="contact__sub">
+          Available for creative director roles, consulting, and collaborations.
+        </p>
+        <a href="mailto:garethwrwinter@outlook.com" class="contact__email">
+          garethwrwinter@outlook.com
+        </a>
+        <div class="contact__links">
+          <a
+            href="https://instagram.com/garethwinter"
+            target="_blank"
+            rel="noopener noreferrer">Instagram</a
+          >
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
+
+<style>
+  /* ── Reset & Base ──────────────────────────────────────────── */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --black: #111111;
+    --off-white: #f5f4f0;
+    --white: #ffffff;
+    --grey: #e8e6e1;
+    --text-mid: #555555;
+    --accent: #b5935a;
+
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    --max-w: 960px;
+    --gap: clamp(1rem, 4vw, 2rem);
+  }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Layout ────────────────────────────────────────────────── */
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 var(--gap);
+  }
+
+  /* ── Section Title ─────────────────────────────────────────── */
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 3rem;
+    color: var(--black);
+  }
+
+  /* ── Hero ──────────────────────────────────────────────────── */
+  .hero {
+    background: var(--black);
+    color: var(--white);
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    padding: clamp(3rem, 8vw, 6rem) 0;
+  }
+
+  .hero__inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 var(--gap);
+  }
+
+  .hero__eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__name {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 14vw, 10rem);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero__tagline {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 520px;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+  }
+
+  .hero__cta {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--black);
+    background: var(--accent);
+    padding: 0.875rem 2rem;
+    transition: opacity 0.2s ease;
+  }
+
+  .hero__cta:hover {
+    opacity: 0.85;
+  }
+
+  /* ── Intro ─────────────────────────────────────────────────── */
+  .intro {
+    background: var(--white);
+    padding: clamp(4rem, 10vw, 8rem) 0;
+    border-bottom: 1px solid var(--grey);
+  }
+
+  .intro__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  @media (min-width: 700px) {
+    .intro__grid {
+      grid-template-columns: 3fr 2fr;
+      gap: 6rem;
+      align-items: start;
+    }
+  }
+
+  .intro__statement p {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.75;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+  }
+
+  .intro__statement p:last-child {
+    margin-bottom: 0;
+  }
+
+  .intro__credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .credential__number {
+    display: block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .credential__label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+  }
+
+  /* ── Experience ────────────────────────────────────────────── */
+  .experience {
+    background: var(--off-white);
+    padding: clamp(4rem, 10vw, 8rem) 0;
+  }
+
+  .experience__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .role {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--grey);
+  }
+
+  .role:last-child {
+    border-bottom: 1px solid var(--grey);
+  }
+
+  @media (min-width: 700px) {
+    .role {
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+  }
+
+  .role__brand {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--black);
+    margin-bottom: 0.25rem;
+  }
+
+  .role__period {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    margin-bottom: 0.75rem;
+  }
+
+  .role__title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+  }
+
+  .role__stat {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-top: 0.75rem;
+  }
+
+  .role__description {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #333;
+    margin-top: 0.5rem;
+  }
+
+  @media (min-width: 700px) {
+    .role__description {
+      margin-top: 0;
+    }
+  }
+
+  /* ── Skills ────────────────────────────────────────────────── */
+  .skills {
+    background: var(--white);
+    padding: clamp(4rem, 10vw, 8rem) 0;
+    border-top: 1px solid var(--grey);
+  }
+
+  .skills__grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  @media (min-width: 700px) {
+    .skills__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .skill {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--black);
+    padding: 1rem 0;
+    border-top: 1px solid var(--grey);
+    padding-right: 1rem;
+  }
+
+  /* ── Contact ───────────────────────────────────────────────── */
+  .contact {
+    background: var(--black);
+    color: var(--white);
+    padding: clamp(4rem, 10vw, 8rem) 0;
+  }
+
+  .contact__heading {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact__sub {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .contact__email {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 3vw, 1.75rem);
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: opacity 0.2s ease;
+  }
+
+  .contact__email:hover {
+    opacity: 0.75;
+  }
+
+  .contact__links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .contact__links a {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .contact__links a:hover {
+    color: var(--white);
+  }
+</style>
