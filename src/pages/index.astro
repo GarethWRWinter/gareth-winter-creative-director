@@ -130,13 +130,13 @@ const work = [
           <div class="intro__statement">
             <p>
               In 2012, Sir Bradley Wiggins crossed the finish line on the
-              Champs-Elysees, becoming the first British cyclist to win the
-              Tour de France, and then went on to win a gold medal at the
-              London Olympic Games. I was at Sky. I was part of the team that
+              Champs-Élysées, becoming the first British cyclist to win the
+              Tour de France, and then went on to win gold at the London
+              Olympic Games. I was at Sky. I was part of the team that
               communicated that victory to the nation. Within ten years, 1.7
               million people in the UK had taken up cycling for the first
-              time. That is what creative work can do when it earns its place
-              in the world.
+              time. That is the power of storytelling, and what it can do
+              when it earns its place in the world.
             </p>
             <p>
               That era changed me. Sir David Brailsford built British Cycling
@@ -145,7 +145,7 @@ const work = [
               I was not just working inside that culture. I was a student of
               it. That thinking became the operating system behind everything
               I have built since. James Clear later used Sir David's marginal
-              gains philosophy as the central case study in Atomic Habits —
+              gains philosophy as the central case study in Atomic Habits,
               one of the most-read performance books of the past decade. When
               I was inside that culture, it was not a concept. It was the way
               we worked every single day. Twenty years, every scale, inside
@@ -154,14 +154,16 @@ const work = [
             </p>
             <p>
               I am not just a director of people. I shoot. I write. I direct.
-              I produce. At Mindvalley, I am making creative work for an
-              audience that is genuinely trying to change their lives. Three
-              million students across one hundred and ninety countries. People
-              who flew to Amsterdam from every corner of the world to sit in
-              that room. That audience has no tolerance for work that is not
-              honest. And they will share everything when it is. Authenticity
-              in creative work is not a value. It is a method. The platform I
-              work for now demands it every single day.
+              I edit. I design. I produce. At Mindvalley, we operate at the
+              highest level. My time at Sky was foundation-building. I am
+              making creative work for an audience that is genuinely trying
+              to change their lives. Three million students across one hundred
+              and ninety countries. People who flew to Amsterdam from every
+              corner of the world to join our live event and stage talks. That
+              audience has no tolerance for work that is not honest. And they
+              will share everything when it is. Authenticity in creative work
+              is not a value. It is a method. The platform I work for now
+              demands it every single day.
             </p>
           </div>
           <div class="intro__credentials">
@@ -240,37 +242,44 @@ const work = [
     <!-- ─── SKY ON-SET PHOTOS ────────────────────────────────────── -->
     <section class="onset-photos">
       <div class="container">
-        <p class="onset-photos__label">Sky — On Set</p>
-      </div>
-      <div class="onset-photos__grid">
-        <figure>
-          <img
-            src="/sky-production/sky-onset-1.jpg"
-            alt="Gareth Winter directing on set for Sky cycling production"
-            loading="lazy"
-          />
-        </figure>
-        <figure>
-          <img
-            src="/sky-production/sky-onset-2.jpg"
-            alt="Sky cycling shoot production"
-            loading="lazy"
-          />
-        </figure>
-        <figure>
-          <img
-            src="/sky-production/sky-onset-3.jpg"
-            alt="Team Sky on-set production"
-            loading="lazy"
-          />
-        </figure>
-        <figure>
-          <img
-            src="/sky-production/sky-onset-4.jpg"
-            alt="Sky on-set direction — cycling"
-            loading="lazy"
-          />
-        </figure>
+        <p class="onset-photos__label">On Set</p>
+        <div class="onset-photos__grid">
+          <figure>
+            <img
+              src="/sky-production/sky-onset-1.jpg"
+              alt="Gareth Winter directing on set for Sky cycling production"
+              loading="lazy"
+            />
+          </figure>
+          <figure>
+            <img
+              src="/sky-production/sky-onset-2.jpg"
+              alt="Sky cycling shoot production"
+              loading="lazy"
+            />
+          </figure>
+          <figure>
+            <img
+              src="/sky-production/sky-onset-3.jpg"
+              alt="Team Sky on-set production"
+              loading="lazy"
+            />
+          </figure>
+          <figure>
+            <img
+              src="/sky-production/sky-onset-4.jpg"
+              alt="Sky on-set direction — cycling"
+              loading="lazy"
+            />
+          </figure>
+          <figure>
+            <img
+              src="/DSCF8534.jpg"
+              alt="Gareth Winter on set — cycling production"
+              loading="lazy"
+            />
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -279,7 +288,81 @@ const work = [
       <div class="container">
         <h2 class="section-title">Selected Work</h2>
         <div class="work__grid">
-          {work.map((item) => (
+          {work.slice(0, 2).map((item) => (
+            <div
+              class="work__item"
+              data-video-id={item.id}
+              role="button"
+              tabindex="0"
+              aria-label={`Play ${item.title}`}
+            >
+              <div
+                class="work__thumb"
+                style={`background-image: url(https://img.youtube.com/vi/${item.id}/maxresdefault.jpg)`}
+              >
+                <div class="work__play">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="work__meta">
+                <p class="work__brand">{item.brand}</p>
+                <p class="work__title">{item.title}</p>
+              </div>
+            </div>
+          ))}
+
+          <!-- ─── REELS ROW ─────────────────────────────────────────── -->
+          <div class="work__reels-row">
+            <div class="reel-wrap">
+              <div class="reel-player">
+                <video src="/reels/jay-shetty.mp4" playsinline preload="metadata"></video>
+                <button class="reel-play" aria-label="Play video">
+                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="26" cy="26" r="26" fill="rgba(0,0,0,0.45)"/>
+                    <polygon points="21,16 38,26 21,36" fill="white"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="work__meta">
+                <p class="work__brand">Mindvalley</p>
+                <p class="work__title">Jay Shetty</p>
+              </div>
+            </div>
+            <div class="reel-wrap">
+              <div class="reel-player">
+                <video src="/reels/gwyneth-paltrow.mp4" playsinline preload="metadata"></video>
+                <button class="reel-play" aria-label="Play video">
+                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="26" cy="26" r="26" fill="rgba(0,0,0,0.45)"/>
+                    <polygon points="21,16 38,26 21,36" fill="white"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="work__meta">
+                <p class="work__brand">Mindvalley</p>
+                <p class="work__title">Gwyneth Paltrow</p>
+              </div>
+            </div>
+            <div class="reel-wrap">
+              <div class="reel-player">
+                <video src="/reels/steven-bartlett.mp4" playsinline preload="metadata"></video>
+                <button class="reel-play" aria-label="Play video">
+                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="26" cy="26" r="26" fill="rgba(0,0,0,0.45)"/>
+                    <polygon points="21,16 38,26 21,36" fill="white"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="work__meta">
+                <p class="work__brand">Mindvalley</p>
+                <p class="work__title">Steven Bartlett</p>
+              </div>
+            </div>
+          </div>
+
+          {work.slice(2).map((item) => (
             <div
               class="work__item"
               data-video-id={item.id}
@@ -305,34 +388,6 @@ const work = [
           ))}
         </div>
       </div>
-    </section>
-
-    <!-- ─── SOCIAL REELS ───────────────────────────────────────────── -->
-    <section class="reels">
-      <div class="container">
-        <h2 class="section-title">From the Feed</h2>
-        <div class="reels__grid">
-          <blockquote
-            class="instagram-media"
-            data-instgrm-permalink="https://www.instagram.com/mindvalley/reel/DExhphvggg3/"
-            data-instgrm-version="14"
-            style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; max-width:100%; min-width:326px; padding:0; width:99.375%;"
-          ></blockquote>
-          <blockquote
-            class="instagram-media"
-            data-instgrm-permalink="https://www.instagram.com/reel/DKHMy7fBcDJ/"
-            data-instgrm-version="14"
-            style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; max-width:100%; min-width:326px; padding:0; width:99.375%;"
-          ></blockquote>
-          <blockquote
-            class="instagram-media"
-            data-instgrm-permalink="https://www.instagram.com/mindvalley/reel/DEqSTF5z8eG/"
-            data-instgrm-version="14"
-            style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; max-width:100%; min-width:326px; padding:0; width:99.375%;"
-          ></blockquote>
-        </div>
-      </div>
-      <script async src="//www.instagram.com/embed.js"></script>
     </section>
 
     <!-- ─── SKILLS ─────────────────────────────────────────────────── -->
@@ -387,6 +442,40 @@ const work = [
     </section>
 
     <script>
+      // Fix thumbnails: maxresdefault returns a 120×90 placeholder if unavailable — fall back to hqdefault
+      document.querySelectorAll('.work__thumb').forEach(function(thumb) {
+        var match = (thumb.style.backgroundImage || '').match(/vi\/([^/]+)\/maxresdefault/);
+        if (!match) return;
+        var id = match[1];
+        var probe = new Image();
+        probe.onload = function() {
+          if (this.naturalWidth <= 120) {
+            thumb.style.backgroundImage = 'url(https://img.youtube.com/vi/' + id + '/hqdefault.jpg)';
+          }
+        };
+        probe.src = 'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg';
+      });
+
+      // Reel click-to-play
+      document.querySelectorAll('.reel-player').forEach(function(player) {
+        var video = player.querySelector('video');
+        var playBtn = player.querySelector('.reel-play');
+
+        player.addEventListener('click', function() {
+          if (video.paused) {
+            video.play();
+            playBtn.classList.add('hidden');
+          } else {
+            video.pause();
+            playBtn.classList.remove('hidden');
+          }
+        });
+
+        video.addEventListener('ended', function() {
+          playBtn.classList.remove('hidden');
+        });
+      });
+
       // Inline YouTube playback
       document.querySelectorAll('.work__item[data-video-id]').forEach(function(item) {
         function playVideo() {
@@ -765,18 +854,19 @@ const work = [
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .onset-photos__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 1.25rem;
   }
 
   @media (min-width: 700px) {
     .onset-photos__grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 
@@ -784,7 +874,7 @@ const work = [
     margin: 0;
     padding: 0;
     overflow: hidden;
-    aspect-ratio: 3/4;
+    aspect-ratio: 1/1;
     background: #1a1a1a;
   }
 
@@ -798,7 +888,7 @@ const work = [
   }
 
   .onset-photos__grid figure:hover img {
-    transform: scale(1.04);
+    transform: scale(1.05);
   }
 
   /* ── Selected Work ─────────────────────────────────────────── */
@@ -879,29 +969,84 @@ const work = [
     line-height: 1.4;
   }
 
+  /* ── Reels row (inside work grid) ─────────────────────────── */
+  .work__reels-row {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .work__reels-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
   /* ── Social Reels ──────────────────────────────────────────── */
   .reels {
-    background: var(--off-white);
+    background: var(--white);
     padding: clamp(4rem, 10vw, 8rem) 0;
     border-top: 1px solid var(--grey);
   }
 
-  .reels__grid {
+  :global(.reels__grid) {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   @media (min-width: 700px) {
-    .reels__grid {
+    :global(.reels__grid) {
       grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
   }
 
-  .reels__grid .instagram-media {
-    margin: 0 auto !important;
-    min-width: 0 !important;
-    width: 100% !important;
+  :global(.reel-wrap) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  :global(.reel-player) {
+    position: relative;
+    aspect-ratio: 9/16;
+    background: #000;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  :global(.reel-player video) {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  :global(.reel-play) {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  :global(.reel-play.hidden) {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  :global(.reel-caption) {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    padding: 0.6rem 0 0;
   }
 
   /* ── Skills ────────────────────────────────────────────────── */
