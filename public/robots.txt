@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://garethwintercreativedirector.com/sitemap.xml
