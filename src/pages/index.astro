@@ -311,42 +311,30 @@ const work = [
       <div class="container">
         <p class="onset-photos__label">On Set</p>
       </div>
-      <div class="onset-photos__grid">
-        <figure>
-          <img
-            src="/sky-production/sky-onset-1.jpg"
-            alt="Gareth Winter directing on set for Sky cycling production"
-            loading="lazy"
-          />
-        </figure>
-        <figure>
-          <img
-            src="/sky-production/sky-onset-2.jpg"
-            alt="Sky cycling shoot production"
-            loading="lazy"
-          />
-        </figure>
-        <figure>
-          <img
-            src="/sky-production/sky-onset-3.jpg"
-            alt="Team Sky on-set production"
-            loading="lazy"
-          />
-        </figure>
-        <figure>
-          <img
-            src="/sky-production/sky-onset-4.jpg"
-            alt="Sky on-set direction — cycling"
-            loading="lazy"
-          />
-        </figure>
-        <figure>
-          <img
-            src="/DSCF8534.jpg"
-            alt="Gareth Winter on set — cycling production"
-            loading="lazy"
-          />
-        </figure>
+      <div class="onset-carousel">
+        <div class="onset-carousel__track" id="onsetTrack">
+          <figure>
+            <img src="/sky-production/sky-onset-1.jpg" alt="Gareth Winter directing on set for Sky cycling production" loading="lazy" />
+          </figure>
+          <figure>
+            <img src="/sky-production/sky-onset-2.jpg" alt="Sky cycling shoot production" loading="lazy" />
+          </figure>
+          <figure>
+            <img src="/sky-production/sky-onset-3.jpg" alt="Team Sky on-set production" loading="lazy" />
+          </figure>
+          <figure>
+            <img src="/sky-production/sky-onset-4.jpg" alt="Sky on-set direction — cycling" loading="lazy" />
+          </figure>
+          <figure>
+            <img src="/DSCF8534.jpg" alt="Gareth Winter on set — cycling production" loading="lazy" style="object-position: 30% center;" />
+          </figure>
+        </div>
+        <button class="onset-carousel__btn onset-carousel__btn--prev" id="onsetPrev" aria-label="Previous photo">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="13,4 7,10 13,16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="onset-carousel__btn onset-carousel__btn--next" id="onsetNext" aria-label="Next photo">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="7,4 13,10 7,16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
     </section>
 
@@ -522,6 +510,21 @@ const work = [
         };
         probe.src = 'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg';
       });
+
+      // On-set carousel
+      (function() {
+        var track = document.getElementById('onsetTrack');
+        var prev  = document.getElementById('onsetPrev');
+        var next  = document.getElementById('onsetNext');
+        if (!track) return;
+        var slideWidth = function() { return track.firstElementChild.offsetWidth + 3; };
+        prev.addEventListener('click', function() {
+          track.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
+        });
+        next.addEventListener('click', function() {
+          track.scrollBy({ left: slideWidth(), behavior: 'smooth' });
+        });
+      })();
 
       // Reel click-to-play
       document.querySelectorAll('.reel-player').forEach(function(player) {
@@ -920,11 +923,11 @@ const work = [
     }
   }
 
-  /* ── On-Set Photos ─────────────────────────────────────────── */
+  /* ── On-Set Carousel ───────────────────────────────────────── */
   .onset-photos {
     background: var(--black);
     padding-top: clamp(2rem, 5vw, 3.5rem);
-    padding-bottom: 0;
+    padding-bottom: clamp(2rem, 5vw, 3.5rem);
   }
 
   .onset-photos__label {
@@ -936,28 +939,35 @@ const work = [
     margin-bottom: 1.25rem;
   }
 
-  .onset-photos__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+  .onset-carousel {
+    position: relative;
     margin-top: 1.25rem;
   }
 
-  @media (min-width: 700px) {
-    .onset-photos__grid {
-      grid-template-columns: repeat(5, 1fr);
-    }
+  .onset-carousel__track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 3px;
   }
 
-  .onset-photos__grid figure {
+  .onset-carousel__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .onset-carousel__track figure {
+    flex: 0 0 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    aspect-ratio: 3/4;
+    aspect-ratio: 16/9;
     background: #1a1a1a;
+    scroll-snap-align: start;
   }
 
-  .onset-photos__grid figure img {
+  .onset-carousel__track figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -966,8 +976,38 @@ const work = [
     transition: transform 0.4s ease;
   }
 
-  .onset-photos__grid figure:hover img {
-    transform: scale(1.05);
+  .onset-carousel__track figure:hover img {
+    transform: scale(1.02);
+  }
+
+  .onset-carousel__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    z-index: 2;
+  }
+
+  .onset-carousel__btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .onset-carousel__btn--prev {
+    left: 1.5rem;
+  }
+
+  .onset-carousel__btn--next {
+    right: 1.5rem;
   }
 
   /* ── Selected Work ─────────────────────────────────────────── */
