@@ -329,12 +329,13 @@ const work = [
             <img src="/DSCF8534.jpg" alt="Gareth Winter on set — cycling production" loading="lazy" style="object-position: 30% center;" />
           </figure>
         </div>
-        <button class="onset-carousel__btn onset-carousel__btn--prev" id="onsetPrev" aria-label="Previous photo">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="13,4 7,10 13,16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <button class="onset-carousel__btn onset-carousel__btn--next" id="onsetNext" aria-label="Next photo">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="7,4 13,10 7,16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
+        <div class="onset-carousel__dots" id="onsetDots">
+          <button class="onset-carousel__dot active" data-index="0" aria-label="Photo 1"></button>
+          <button class="onset-carousel__dot" data-index="1" aria-label="Photo 2"></button>
+          <button class="onset-carousel__dot" data-index="2" aria-label="Photo 3"></button>
+          <button class="onset-carousel__dot" data-index="3" aria-label="Photo 4"></button>
+          <button class="onset-carousel__dot" data-index="4" aria-label="Photo 5"></button>
+        </div>
       </div>
     </section>
 
@@ -513,17 +514,54 @@ const work = [
 
       // On-set carousel
       (function() {
-        var track = document.getElementById('onsetTrack');
-        var prev  = document.getElementById('onsetPrev');
-        var next  = document.getElementById('onsetNext');
+        var track  = document.getElementById('onsetTrack');
+        var dots   = document.querySelectorAll('#onsetDots .onset-carousel__dot');
         if (!track) return;
-        var slideWidth = function() { return track.firstElementChild.offsetWidth + 3; };
-        prev.addEventListener('click', function() {
-          track.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
+
+        var total     = track.children.length;
+        var current   = 0;
+        var timer;
+
+        function slideWidth() {
+          return track.firstElementChild.offsetWidth + 3;
+        }
+
+        function goTo(index) {
+          current = ((index % total) + total) % total;
+          track.scrollTo({ left: current * slideWidth(), behavior: 'smooth' });
+          dots.forEach(function(d, i) {
+            d.classList.toggle('active', i === current);
+          });
+        }
+
+        function advance() { goTo(current + 1); }
+
+        function startTimer() { timer = setInterval(advance, 3000); }
+        function stopTimer()  { clearInterval(timer); }
+
+        // Dot clicks
+        dots.forEach(function(dot) {
+          dot.addEventListener('click', function() {
+            stopTimer();
+            goTo(parseInt(dot.dataset.index));
+            startTimer();
+          });
         });
-        next.addEventListener('click', function() {
-          track.scrollBy({ left: slideWidth(), behavior: 'smooth' });
-        });
+
+        // Pause on hover
+        track.addEventListener('mouseenter', stopTimer);
+        track.addEventListener('mouseleave', startTimer);
+
+        // Sync dots on manual scroll
+        track.addEventListener('scroll', function() {
+          var idx = Math.round(track.scrollLeft / slideWidth());
+          dots.forEach(function(d, i) {
+            d.classList.toggle('active', i === idx);
+          });
+          current = idx;
+        }, { passive: true });
+
+        startTimer();
       })();
 
       // Reel click-to-play
@@ -958,13 +996,19 @@ const work = [
   }
 
   .onset-carousel__track figure {
-    flex: 0 0 100%;
+    flex: 0 0 calc(25% - 3px);
     margin: 0;
     padding: 0;
     overflow: hidden;
-    aspect-ratio: 16/9;
+    aspect-ratio: 4/3;
     background: #1a1a1a;
     scroll-snap-align: start;
+  }
+
+  @media (max-width: 700px) {
+    .onset-carousel__track figure {
+      flex: 0 0 calc(80% - 3px);
+    }
   }
 
   .onset-carousel__track figure img {
@@ -980,34 +1024,28 @@ const work = [
     transform: scale(1.02);
   }
 
-  .onset-carousel__btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
+  /* Dots */
+  .onset-carousel__dots {
     display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .onset-carousel__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.25);
     cursor: pointer;
-    transition: background 0.2s ease;
-    z-index: 2;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
   }
 
-  .onset-carousel__btn:hover {
-    background: rgba(0, 0, 0, 0.8);
-  }
-
-  .onset-carousel__btn--prev {
-    left: 1.5rem;
-  }
-
-  .onset-carousel__btn--next {
-    right: 1.5rem;
+  .onset-carousel__dot.active {
+    background: var(--accent);
+    transform: scale(1.3);
   }
 
   /* ── Selected Work ─────────────────────────────────────────── */
