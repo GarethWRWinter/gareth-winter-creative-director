@@ -9,6 +9,7 @@ const meta = {
 const experience = [
   {
     brand: "Mindvalley",
+    logos: [{ src: "/logos/mindvalley.svg", alt: "Mindvalley", height: "2rem" }],
     role: "Creative Director",
     period: "2024 – Present",
     stat: null,
@@ -17,6 +18,7 @@ const experience = [
   },
   {
     brand: "Go City",
+    logos: [{ src: "/logos/go-city.svg", alt: "Go City", height: "2.75rem" }],
     role: "Creative Director",
     period: "2024",
     stat: "30% growth in month one",
@@ -25,6 +27,7 @@ const experience = [
   },
   {
     brand: "Veloforte",
+    logos: [{ src: "/logos/veloforte.svg", alt: "Veloforte", height: "3.75rem" }],
     role: "Creative Director",
     period: "2022 – 2023",
     stat: "93% revenue growth in 18 months",
@@ -33,6 +36,8 @@ const experience = [
   },
   {
     brand: "Le Blanq",
+    logos: [{ src: "/logos/leblanq.svg", alt: "Le Blanq", height: "2rem" }],
+    logosMarginBottom: "0.6rem",
     role: "Creative Director",
     period: "2021 – 2022",
     stat: null,
@@ -41,6 +46,12 @@ const experience = [
   },
   {
     brand: "Sky",
+    logosGap: "0.5rem",
+    logos: [
+      { src: "/logos/sky.svg", alt: "Sky", height: "2rem" },
+      { src: "/logos/sky-sports.svg", alt: "Sky Sports", height: "3rem" },
+      { src: "/logos/sky-news.svg", alt: "Sky News", height: "3rem" },
+    ],
     role: "Senior Creative",
     period: "2010 – 2021",
     stat: "Promax UK Creative of the Year",
@@ -300,7 +311,11 @@ const work = [
               <article class="role">
                 <div class="role__header">
                   <div class="role__meta">
-                    <span class="role__brand">{role.brand}</span>
+                    <div class="role__logos" style={[role.logosGap ? `gap:${role.logosGap}` : '', role.logosMarginBottom ? `margin-bottom:${role.logosMarginBottom}` : ''].filter(Boolean).join(';') || undefined}>
+                      {role.logos.map((logo) => (
+                        <img class="role__logo" src={logo.src} alt={logo.alt} style={logo.height ? `height:${logo.height}` : undefined} />
+                      ))}
+                    </div>
                     <span class="role__period">{role.period}</span>
                   </div>
                   <p class="role__title">{role.role}</p>
@@ -931,6 +946,23 @@ const work = [
     }
   }
 
+  .role__logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.25rem;
+    line-height: 0;
+  }
+
+  .role__logo {
+    display: block;
+    height: 2rem;
+    width: auto;
+    object-fit: contain;
+    object-position: left center;
+  }
+
   .role__brand {
     display: block;
     font-family: var(--font-display);
@@ -947,6 +979,7 @@ const work = [
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-mid);
+    margin-top: 0.35rem;
     margin-bottom: 0.75rem;
   }
 
