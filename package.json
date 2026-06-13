@@ -1,15 +1,7 @@
 {
   "name": "gareth-winter-creative-director",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@vercel/analytics": "^1.6.1",
-    "astro": "^5.17.1"
-  }
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal site for Gareth Winter — Creative Director, Head of Content & AI. Hand-coded static HTML, no build step. Served from /public via Vercel.",
+  "license": "UNLICENSED"
 }
