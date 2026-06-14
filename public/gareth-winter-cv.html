@@ -6,12 +6,12 @@
 <title>Gareth Winter · Creative Director &amp; Head of Content · CV</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&family=Schibsted+Grotesk:wght@400;500;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&family=Schibsted+Grotesk:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
 <style>
   :root{
     --paper:#F4F2EC; --surface:#FFFFFF; --ink:#23211C; --ink-2:#565049; --ink-3:#8C857A;
     --line:#E4DFD3; --line-strong:#D6CFC1;
-    --forest:#36513F; --forest-soft:#5C7A63; --clay:#BB6647; --sage-tint:#E9ECE2;
+    --forest:#36513F; --forest-soft:#5C7A63; --sage:#C3CDBC; --clay:#BB6647; --clay-soft:#D2855B; --sage-tint:#E9ECE2;
     --display:'Bricolage Grotesque','Segoe UI',sans-serif;
     --sans:'Schibsted Grotesk',-apple-system,'Segoe UI',Helvetica,sans-serif;
     --script:'Caveat',cursive;
@@ -19,200 +19,200 @@
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   body{font-family:var(--sans);background:#E7E3D9;color:var(--ink);line-height:1.5;}
+  p,li{orphans:3;widows:3;}
 
-  /* Screen scaffolding */
-  .toolbar{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:center;gap:.75rem;background:rgba(35,33,28,.94);padding:.6rem;backdrop-filter:blur(8px);}
-  .toolbar span{color:rgba(255,255,255,.6);font-size:.78rem;letter-spacing:.02em;}
-  .toolbar button{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--forest);border:none;padding:.5rem 1.1rem;border-radius:4px;cursor:pointer;transition:background .2s;}
+  /* Screen toolbar */
+  .toolbar{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:center;gap:.9rem;background:rgba(35,33,28,.95);padding:.6rem;backdrop-filter:blur(8px);}
+  .toolbar span{color:rgba(255,255,255,.6);font-size:.78rem;}
+  .toolbar button{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--forest);border:none;padding:.5rem 1.2rem;border-radius:4px;cursor:pointer;transition:background .2s;}
   .toolbar button:hover{background:var(--forest-soft);}
-  .page-wrap{padding:72px 16px 40px;display:flex;justify-content:center;}
+  .page-wrap{padding:74px 16px 44px;display:flex;justify-content:center;}
 
-  /* A4 sheet */
-  .sheet{width:210mm;min-height:297mm;background:var(--paper);padding:14mm 15mm;box-shadow:0 8px 40px rgba(0,0,0,.18);}
+  .sheet{width:210mm;min-height:297mm;background:var(--paper);padding:15mm 16mm 13mm;position:relative;box-shadow:0 10px 50px rgba(0,0,0,.2);}
+
+  .eyebrow{font-family:var(--sans);font-size:6.6pt;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);display:block;margin-bottom:.55rem;}
 
   /* Header */
-  .head{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:end;padding-bottom:1.1rem;border-bottom:2px solid var(--forest);}
-  .name{font-family:var(--display);font-weight:300;font-size:33pt;letter-spacing:-0.03em;line-height:.95;color:var(--ink);}
-  .title{font-family:var(--sans);font-weight:600;font-size:9.2pt;letter-spacing:.02em;color:var(--forest);margin-top:.5rem;}
-  .contact{text-align:right;font-size:8.2pt;color:var(--ink-2);line-height:1.7;white-space:nowrap;}
+  .head{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:end;}
+  .name{font-family:var(--display);font-weight:300;font-size:36pt;letter-spacing:-0.035em;line-height:.9;color:var(--ink);}
+  .title{font-family:var(--sans);font-weight:600;font-size:9pt;letter-spacing:.01em;color:var(--forest);margin-top:.65rem;max-width:30em;}
+  .contact{text-align:right;font-size:8pt;color:var(--ink-2);line-height:1.75;white-space:nowrap;}
   .contact a{color:var(--ink-2);text-decoration:none;}
-  .contact .loc{font-weight:600;color:var(--ink);}
+  .contact .loc{font-family:var(--display);font-weight:400;font-size:11pt;color:var(--ink);letter-spacing:-0.01em;margin-bottom:.15rem;}
+  .contact .av{color:var(--clay);font-weight:600;}
 
-  .layout{display:grid;grid-template-columns:1fr;gap:0;margin-top:1.4rem;}
+  .contour{width:100%;height:16px;color:var(--line-strong);display:block;margin:1.1rem 0 .2rem;}
 
-  .eyebrow{font-family:var(--sans);font-size:7pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);margin-bottom:.6rem;}
-
-  /* Summary */
-  .summary{font-size:9.4pt;line-height:1.7;color:var(--ink-2);max-width:62em;}
+  /* Profile */
+  .profile{margin-top:1.35rem;}
+  .summary{font-size:9.6pt;line-height:1.72;color:var(--ink-2);max-width:64em;}
   .summary b{color:var(--ink);font-weight:600;}
 
-  /* Results strip */
-  .results{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-top:1.1rem;}
-  .results .r{background:var(--surface);padding:.6rem .5rem;text-align:center;}
-  .results .n{font-family:var(--display);font-weight:300;font-size:14pt;letter-spacing:-0.02em;color:var(--forest);line-height:1;}
-  .results .n .c{color:var(--clay);}
-  .results .l{font-size:6pt;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-top:.28rem;line-height:1.25;}
+  /* Stats band (forest) */
+  .results{display:grid;grid-template-columns:repeat(3,1fr);background:var(--forest);border-radius:7px;overflow:hidden;margin-top:1.25rem;break-inside:avoid;}
+  .results .r{padding:.85rem 1rem;border-top:1px solid rgba(255,255,255,.12);border-left:1px solid rgba(255,255,255,.12);}
+  .results .r:nth-child(-n+3){border-top:none;}
+  .results .r:nth-child(3n+1){border-left:none;}
+  .results .n{font-family:var(--display);font-weight:300;font-size:19pt;letter-spacing:-0.02em;color:#fff;line-height:1;}
+  .results .n .c{color:var(--clay-soft);}
+  .results .l{font-size:6.4pt;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-top:.4rem;line-height:1.3;}
 
-  .section{margin-top:1.5rem;}
-  .section-h{font-family:var(--display);font-weight:400;font-size:13pt;letter-spacing:-0.01em;color:var(--ink);border-bottom:1px solid var(--line-strong);padding-bottom:.35rem;margin-bottom:.9rem;}
+  /* Sections */
+  .section{margin-top:1.7rem;}
+  .section-h{font-family:var(--display);font-weight:400;font-size:14pt;letter-spacing:-0.01em;color:var(--ink);padding-bottom:.4rem;border-bottom:1px solid var(--line-strong);margin-bottom:1rem;break-after:avoid;}
 
   /* Experience */
-  .role{padding:.55rem 0 .75rem;border-bottom:1px solid var(--line);break-inside:avoid;page-break-inside:avoid;}
-  .role:last-child{border-bottom:none;}
-  .role-top{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;}
-  .role-co{font-family:var(--display);font-weight:500;font-size:11pt;color:var(--ink);}
-  .role-when{font-size:7.6pt;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap;}
-  .role-title{font-size:8.4pt;font-weight:600;color:var(--forest-soft);margin-top:.05rem;margin-bottom:.45rem;}
-  .role-title .stat{color:var(--clay);font-style:italic;font-family:var(--display);font-weight:400;}
+  .role{padding:.1rem 0 .85rem;margin-bottom:.85rem;border-bottom:1px solid var(--line);break-inside:avoid;}
+  .role:last-child{border-bottom:none;margin-bottom:0;}
+  .role-top{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;break-after:avoid;}
+  .role-co{font-family:var(--display);font-weight:500;font-size:12pt;color:var(--forest);letter-spacing:-0.01em;}
+  .role-when{font-size:7.2pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);white-space:nowrap;}
+  .role-title{font-size:8.4pt;font-weight:600;color:var(--ink-2);margin-top:.1rem;margin-bottom:.5rem;break-after:avoid;}
+  .role-title .stat{color:var(--forest-soft);font-style:italic;}
   .bul{list-style:none;}
-  .bul li{position:relative;padding-left:.85rem;font-size:8.6pt;line-height:1.55;color:var(--ink-2);margin-bottom:.22rem;}
-  .bul li::before{content:'';position:absolute;left:0;top:.42em;width:4px;height:4px;background:var(--clay);border-radius:1px;}
+  .bul li{position:relative;padding-left:.95rem;font-size:8.6pt;line-height:1.55;color:var(--ink-2);margin-bottom:.26rem;}
+  .bul li::before{content:'';position:absolute;left:0;top:.45em;width:4px;height:4px;background:var(--clay);border-radius:1px;}
 
-  /* Two-up lower sections */
-  .grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;margin-top:1.5rem;break-inside:avoid;page-break-inside:avoid;}
-  .skillgroup{margin-bottom:.7rem;break-inside:avoid;}
-  .skillgroup h4{font-size:8.4pt;font-weight:700;color:var(--ink);margin-bottom:.12rem;}
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 2.4rem;break-inside:avoid;}
+  .skillgroup{break-inside:avoid;}
+  .skillgroup h4{font-family:var(--sans);font-size:8.6pt;font-weight:700;color:var(--forest);margin-bottom:.18rem;}
   .skillgroup p{font-size:8pt;color:var(--ink-3);line-height:1.5;}
 
-  .sign{font-family:var(--script);font-size:26pt;color:var(--forest);line-height:1;margin-top:1.4rem;}
-  .foot{margin-top:.5rem;font-size:7.4pt;color:var(--ink-3);letter-spacing:.04em;}
+  /* Sign-off */
+  .signoff{margin-top:1.6rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;break-inside:avoid;}
+  .sign{font-family:var(--script);font-weight:600;font-size:30pt;color:var(--forest);line-height:.8;}
+  .foot{font-size:7.2pt;color:var(--ink-3);letter-spacing:.04em;text-align:right;line-height:1.6;}
+  .foot a{color:var(--ink-3);text-decoration:none;}
 
   @media print{
     body{background:#fff;}
     .toolbar{display:none;}
     .page-wrap{padding:0;}
     .sheet{box-shadow:none;width:auto;min-height:auto;padding:0;}
-    @page{size:A4;margin:13mm 14mm;}
+    .section-h,.role-top,.role-title,h2,h3,h4{break-after:avoid;}
+    .role,.skillgroup,.skills-grid,.results,.signoff{break-inside:avoid;}
+    @page{size:A4;margin:12mm 13mm;}
   }
 </style>
 </head>
 <body>
   <div class="toolbar">
-    <span>Tip: press the button, then choose “Save as PDF”, A4, default margins.</span>
+    <span>To export: press the button, then choose “Save as PDF”, A4 paper, default margins.</span>
     <button onclick="window.print()">Save as PDF</button>
   </div>
 
   <div class="page-wrap">
   <main class="sheet">
 
-    <header class="head">
-      <div>
-        <div class="name">Gareth Winter</div>
-        <div class="title">Creative Director &amp; Head of Content · Brand, Film, Performance Marketing &amp; AI</div>
+    <header>
+      <span class="eyebrow">Curriculum Vitae</span>
+      <div class="head">
+        <div>
+          <div class="name">Gareth Winter</div>
+          <div class="title">Creative Director &amp; Head of Content · Brand, Film, Performance Marketing &amp; AI</div>
+        </div>
+        <div class="contact">
+          <div class="loc">Oakham, UK</div>
+          <div class="av">Commutes to London · Available globally</div>
+          <div><a href="mailto:garethwrwinter@outlook.com">garethwrwinter@outlook.com</a></div>
+          <div>07414 716 933</div>
+          <div><a href="https://garethwintercreativedirector.com">garethwintercreativedirector.com</a></div>
+          <div><a href="https://www.linkedin.com/in/gareth-winter-20035221/">linkedin.com/in/gareth-winter</a></div>
+        </div>
       </div>
-      <div class="contact">
-        <div class="loc">Oakham, UK</div>
-        <div>Commutes to London · Available globally</div>
-        <div><a href="mailto:garethwrwinter@outlook.com">garethwrwinter@outlook.com</a></div>
-        <div>07414 716 933</div>
-        <div><a href="https://garethwintercreativedirector.com">garethwintercreativedirector.com</a></div>
-        <div><a href="https://www.linkedin.com/in/gareth-winter-20035221/">linkedin.com/in/gareth-winter</a></div>
-      </div>
+      <svg class="contour" viewBox="0 0 1000 16" preserveAspectRatio="none" fill="none" aria-hidden="true">
+        <path d="M0,11 C60,11 90,5 150,6 C210,8 240,13 300,12 C360,10 390,3 450,5 C510,7 540,12 600,10 C660,8 690,4 750,6 C810,8 840,11 900,9 C950,7 975,10 1000,9" stroke="currentColor" stroke-width="1.1" vector-effect="non-scaling-stroke"/>
+        <circle cx="450" cy="5" r="2.6" fill="#BB6647"/>
+      </svg>
     </header>
 
-    <div class="layout">
-      <p class="eyebrow" style="margin-top:1.3rem;">Profile</p>
+    <section class="profile">
+      <span class="eyebrow">Profile</span>
       <p class="summary">
         Creative Director and Head of Content with twenty years turning craft into commercial results. I run the entire creative output of one of the world's best-known personal-growth companies, brand, content, film, performance marketing and social, working directly with the CEO. I'm as comfortable directing a film as I am reading a P&amp;L: I steer <b>seven-figure monthly ad spend</b> and build the AI systems that let a lean team produce like a large one. I believe in trust before transaction, in fewer things done properly, and in work good enough that people share it without being asked.
       </p>
 
       <div class="results">
-        <div class="r"><div class="n">$1M<span class="c">+</span></div><div class="l">Monthly ad spend</div></div>
-        <div class="r"><div class="n">+77<span class="c">%</span></div><div class="l">New-member growth</div></div>
-        <div class="r"><div class="n">~2<span class="c">×</span></div><div class="l">Customer LTV</div></div>
-        <div class="r"><div class="n">93<span class="c">%</span></div><div class="l">Revenue growth</div></div>
+        <div class="r"><div class="n">$1<span class="c">M+</span></div><div class="l">Monthly ad spend directed</div></div>
+        <div class="r"><div class="n">+77<span class="c">%</span></div><div class="l">New-member growth, AI launch</div></div>
+        <div class="r"><div class="n">~2<span class="c">×</span></div><div class="l">Customer lifetime value</div></div>
+        <div class="r"><div class="n">93<span class="c">%</span></div><div class="l">Revenue growth in 18 months</div></div>
         <div class="r"><div class="n">1.7<span class="c">M</span></div><div class="l">Inspired to cycle</div></div>
-        <div class="r"><div class="n">20<span class="c">+</span></div><div class="l">Years</div></div>
+        <div class="r"><div class="n">20<span class="c">+</span></div><div class="l">Years in the industry</div></div>
       </div>
+    </section>
 
-      <section class="section">
-        <h2 class="section-h">Experience</h2>
+    <section class="section">
+      <h2 class="section-h">Experience</h2>
 
-        <article class="role">
-          <div class="role-top">
-            <span class="role-co">Mindvalley</span>
-            <span class="role-when">2024 – Present · Remote / Global</span>
-          </div>
-          <div class="role-title">Creative Director &amp; Head of Content</div>
-          <ul class="bul">
-            <li>Run the entire creative output across content, brand, film, performance marketing and social, working directly with the CEO on strategy, launches and brand direction.</li>
-            <li>Own performance-marketing spend north of $1M a month, and the ROAS that has to justify it.</li>
-            <li>Drove a 77% rise in new-member acquisition off a flagship AI product launch, the strongest product performance in two years.</li>
-            <li>Rebuilt the content model from sales-heavy to trust-first and value-dense; the personalised learning pathway it produced roughly doubled customer lifetime value.</li>
-            <li>Directed the company's highest-rated program ever, an award-winning masterclass staged as a live event at scale.</li>
-            <li>Reinvented the masterclass format into something shorter, denser and far less sales-heavy, protecting brand equity while improving conversion.</li>
-            <li>Built a data initiative that turns audience behaviour into content decisions, so the team makes fewer, better things on purpose.</li>
-            <li>Lead the creative-services team across production, post, design and social, plus headcount and team structure.</li>
-          </ul>
-        </article>
+      <article class="role">
+        <div class="role-top"><span class="role-co">Mindvalley</span><span class="role-when">2024 – Present · Remote / Global</span></div>
+        <div class="role-title">Creative Director &amp; Head of Content</div>
+        <ul class="bul">
+          <li>Run the entire creative output across content, brand, film, performance marketing and social, working directly with the CEO on strategy, launches and brand direction.</li>
+          <li>Own performance-marketing spend north of $1M a month, and the ROAS that has to justify it.</li>
+          <li>Drove a 77% rise in new-member acquisition off a flagship AI product launch, the strongest product performance in two years.</li>
+          <li>Rebuilt the content model from sales-heavy to trust-first and value-dense; the personalised learning pathway it produced roughly doubled customer lifetime value.</li>
+          <li>Directed the company's highest-rated program ever, an award-winning masterclass staged as a live event at scale.</li>
+          <li>Built a data initiative that turns audience behaviour into content decisions, so the team makes fewer, better things on purpose.</li>
+          <li>Lead the creative-services team across production, post, design and social, plus headcount and team structure.</li>
+        </ul>
+      </article>
 
-        <article class="role">
-          <div class="role-top">
-            <span class="role-co">Go City</span>
-            <span class="role-when">2024 · Creative Director</span>
-          </div>
-          <div class="role-title">Creative Director <span class="stat">· 30% growth in month one</span></div>
-          <ul class="bul">
-            <li>Took the creative operation of a global private-equity travel business across thirty-odd cities, found what was quietly gumming it up, and cleared it out.</li>
-            <li>Growth jumped thirty percent in the first month, not from one clever campaign but because the whole operation finally ran clean.</li>
-          </ul>
-        </article>
+      <article class="role">
+        <div class="role-top"><span class="role-co">Go City</span><span class="role-when">2024 · Creative Director</span></div>
+        <div class="role-title">Creative Director <span class="stat">· 30% growth in month one</span></div>
+        <ul class="bul">
+          <li>Took the creative operation of a global private-equity travel business across thirty-odd cities, found what was quietly gumming it up, and cleared it out.</li>
+          <li>Growth jumped thirty percent in the first month, not from one clever campaign but because the whole operation finally ran clean.</li>
+        </ul>
+      </article>
 
-        <article class="role">
-          <div class="role-top">
-            <span class="role-co">Veloforte</span>
-            <span class="role-when">2022 – 2023 · Creative Director</span>
-          </div>
-          <div class="role-title">Creative Director <span class="stat">· 93% revenue growth in 18 months</span></div>
-          <ul class="bul">
-            <li>Built the creative team from a blank page and owned every dimension of the brand: identity, tone of voice, packaging, film, B2B partnerships and the ambassador and influencer setup.</li>
-            <li>Directed every shoot from brief to delivery. E-commerce grew 60% year on year; revenue grew 93% in eighteen months.</li>
-          </ul>
-        </article>
+      <article class="role">
+        <div class="role-top"><span class="role-co">Veloforte</span><span class="role-when">2022 – 2023 · Creative Director</span></div>
+        <div class="role-title">Creative Director <span class="stat">· 93% revenue growth in 18 months</span></div>
+        <ul class="bul">
+          <li>Built the creative team from a blank page and owned every dimension of the brand: identity, tone of voice, packaging, film, B2B partnerships and the ambassador and influencer setup.</li>
+          <li>Directed every shoot from brief to delivery. E-commerce grew 60% year on year; revenue grew 93% in eighteen months.</li>
+        </ul>
+      </article>
 
-        <article class="role">
-          <div class="role-top">
-            <span class="role-co">Le Blanq</span>
-            <span class="role-when">2021 – 2022 · Creative Director</span>
-          </div>
-          <div class="role-title">Creative Director</div>
-          <ul class="bul">
-            <li>Creative strategy and brand content for an ultra-premium cycling lifestyle brand: luxury travel, proper hospitality and the most beautiful roads on earth. Precision over scale, alongside Veloforte.</li>
-          </ul>
-        </article>
+      <article class="role">
+        <div class="role-top"><span class="role-co">Le Blanq</span><span class="role-when">2021 – 2022 · Creative Director</span></div>
+        <div class="role-title">Creative Director</div>
+        <ul class="bul">
+          <li>Creative strategy and brand content for an ultra-premium cycling lifestyle brand: luxury travel, proper hospitality and the most beautiful roads on earth. Precision over scale, alongside Veloforte.</li>
+        </ul>
+      </article>
 
-        <article class="role">
-          <div class="role-top">
-            <span class="role-co">Sky</span>
-            <span class="role-when">2010 – 2021 · Senior Creative</span>
-          </div>
-          <div class="role-title">Senior Creative <span class="stat">· Promax UK Creative of the Year</span></div>
-          <ul class="bul">
-            <li>Eleven years across Sky News, Sports, Entertainment, Movies and Corporate Comms, contributing to Promax UK Agency of the Year.</li>
-            <li>Led cycling work that helped get 1.7 million people in the UK onto a bike for the first time, and contributed to Sky Ocean Rescue.</li>
-          </ul>
-        </article>
-      </section>
+      <article class="role">
+        <div class="role-top"><span class="role-co">Sky</span><span class="role-when">2010 – 2021 · Senior Creative</span></div>
+        <div class="role-title">Senior Creative <span class="stat">· Promax UK Creative of the Year</span></div>
+        <ul class="bul">
+          <li>Eleven years across Sky News, Sports, Entertainment, Movies and Corporate Comms, contributing to Promax UK Agency of the Year.</li>
+          <li>Led cycling work that helped get 1.7 million people in the UK onto a bike for the first time, and contributed to Sky Ocean Rescue.</li>
+        </ul>
+      </article>
+    </section>
 
-      <div class="grid2">
-        <section>
-          <h2 class="section-h">Skills &amp; Expertise</h2>
-          <div class="skillgroup"><h4>Creative Direction</h4><p>Brand identity, art direction, cinematic film, masterclass production, content architecture, campaign concepting.</p></div>
-          <div class="skillgroup"><h4>Content Strategy</h4><p>Value-driven frameworks, trust-first storytelling, snackable lesson design, personalised learning pathways, UGC strategy.</p></div>
-          <div class="skillgroup"><h4>Performance Marketing</h4><p>Ad-creative strategy, ROAS optimisation, VSL production, funnel design, cold-audience hook frameworks.</p></div>
-        </section>
-        <section>
-          <h2 class="section-h">&nbsp;</h2>
-          <div class="skillgroup"><h4>AI &amp; Technology</h4><p>AI content workflows, AI business strategy, prompt engineering, custom GPT design, AI-assisted curriculum.</p></div>
-          <div class="skillgroup"><h4>Leadership &amp; Operations</h4><p>Creative-services leadership across production, design and social; headcount planning; cross-functional delivery.</p></div>
-          <div class="skillgroup"><h4>Social Media</h4><p>YouTube strategy, viral content frameworks, hook optimisation, community-led growth, influencer and UGC.</p></div>
-        </section>
+    <section class="section">
+      <h2 class="section-h">Skills &amp; Expertise</h2>
+      <div class="skills-grid">
+        <div class="skillgroup"><h4>Creative Direction</h4><p>Brand identity, art direction, cinematic film, masterclass production, content architecture, campaign concepting.</p></div>
+        <div class="skillgroup"><h4>AI &amp; Technology</h4><p>AI content workflows, AI business strategy, prompt engineering, custom GPT design, AI-assisted curriculum.</p></div>
+        <div class="skillgroup"><h4>Content Strategy</h4><p>Value-driven frameworks, trust-first storytelling, snackable lesson design, personalised learning pathways, UGC strategy.</p></div>
+        <div class="skillgroup"><h4>Leadership &amp; Operations</h4><p>Creative-services leadership across production, design and social; headcount planning; cross-functional delivery.</p></div>
+        <div class="skillgroup"><h4>Performance Marketing</h4><p>Ad-creative strategy, ROAS optimisation, VSL production, funnel design, cold-audience hook frameworks.</p></div>
+        <div class="skillgroup"><h4>Social Media</h4><p>YouTube strategy, viral content frameworks, hook optimisation, community-led growth, influencer and UGC.</p></div>
       </div>
+    </section>
 
+    <div class="signoff">
       <div class="sign">Gareth</div>
-      <p class="foot">References and portfolio available on request · garethwintercreativedirector.com</p>
-
+      <div class="foot">References &amp; portfolio on request<br><a href="https://garethwintercreativedirector.com">garethwintercreativedirector.com</a></div>
     </div>
+
   </main>
   </div>
 </body>
