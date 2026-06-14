@@ -1,380 +1,219 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Gareth Winter — Creative Director CV</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    @page {
-      size: A4;
-      margin: 14mm 18mm;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gareth Winter · Creative Director &amp; Head of Content · CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&family=Schibsted+Grotesk:wght@400;500;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#F4F2EC; --surface:#FFFFFF; --ink:#23211C; --ink-2:#565049; --ink-3:#8C857A;
+    --line:#E4DFD3; --line-strong:#D6CFC1;
+    --forest:#36513F; --forest-soft:#5C7A63; --clay:#BB6647; --sage-tint:#E9ECE2;
+    --display:'Bricolage Grotesque','Segoe UI',sans-serif;
+    --sans:'Schibsted Grotesk',-apple-system,'Segoe UI',Helvetica,sans-serif;
+    --script:'Caveat',cursive;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{font-family:var(--sans);background:#E7E3D9;color:var(--ink);line-height:1.5;}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  /* Screen scaffolding */
+  .toolbar{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:center;gap:.75rem;background:rgba(35,33,28,.94);padding:.6rem;backdrop-filter:blur(8px);}
+  .toolbar span{color:rgba(255,255,255,.6);font-size:.78rem;letter-spacing:.02em;}
+  .toolbar button{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--forest);border:none;padding:.5rem 1.1rem;border-radius:4px;cursor:pointer;transition:background .2s;}
+  .toolbar button:hover{background:var(--forest-soft);}
+  .page-wrap{padding:72px 16px 40px;display:flex;justify-content:center;}
 
-    html, body {
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
+  /* A4 sheet */
+  .sheet{width:210mm;min-height:297mm;background:var(--paper);padding:14mm 15mm;box-shadow:0 8px 40px rgba(0,0,0,.18);}
 
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #111;
-      background: #fff;
-      font-size: 8.5pt;
-      line-height: 1.5;
-      width: 210mm;
-    }
+  /* Header */
+  .head{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:end;padding-bottom:1.1rem;border-bottom:2px solid var(--forest);}
+  .name{font-family:var(--display);font-weight:300;font-size:33pt;letter-spacing:-0.03em;line-height:.95;color:var(--ink);}
+  .title{font-family:var(--sans);font-weight:600;font-size:9.2pt;letter-spacing:.02em;color:var(--forest);margin-top:.5rem;}
+  .contact{text-align:right;font-size:8.2pt;color:var(--ink-2);line-height:1.7;white-space:nowrap;}
+  .contact a{color:var(--ink-2);text-decoration:none;}
+  .contact .loc{font-weight:600;color:var(--ink);}
 
-    /* Global SVG fill — all logos use .st0/.st1 */
-    .st0, .st1 { fill: #111 !important; }
+  .layout{display:grid;grid-template-columns:1fr;gap:0;margin-top:1.4rem;}
 
-    /* ─── HEADER ──────────────────────────────────────── */
-    header {
-      padding-bottom: 9px;
-      border-bottom: 1px solid #111;
-      margin-bottom: 10px;
-    }
+  .eyebrow{font-family:var(--sans);font-size:7pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);margin-bottom:.6rem;}
 
-    .name {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 30pt;
-      font-weight: 400;
-      line-height: 1;
-      letter-spacing: -0.01em;
-      margin-bottom: 5px;
-    }
+  /* Summary */
+  .summary{font-size:9.4pt;line-height:1.7;color:var(--ink-2);max-width:62em;}
+  .summary b{color:var(--ink);font-weight:600;}
 
-    .headline {
-      font-size: 7pt;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #666;
-      margin-bottom: 7px;
-    }
+  /* Results strip */
+  .results{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-top:1.1rem;}
+  .results .r{background:var(--surface);padding:.6rem .5rem;text-align:center;}
+  .results .n{font-family:var(--display);font-weight:300;font-size:14pt;letter-spacing:-0.02em;color:var(--forest);line-height:1;}
+  .results .n .c{color:var(--clay);}
+  .results .l{font-size:6pt;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-top:.28rem;line-height:1.25;}
 
-    .contact {
-      display: flex;
-      gap: 0;
-      font-size: 7.5pt;
-      color: #444;
-    }
+  .section{margin-top:1.5rem;}
+  .section-h{font-family:var(--display);font-weight:400;font-size:13pt;letter-spacing:-0.01em;color:var(--ink);border-bottom:1px solid var(--line-strong);padding-bottom:.35rem;margin-bottom:.9rem;}
 
-    .contact span {
-      padding-right: 12px;
-    }
+  /* Experience */
+  .role{padding:.55rem 0 .75rem;border-bottom:1px solid var(--line);break-inside:avoid;page-break-inside:avoid;}
+  .role:last-child{border-bottom:none;}
+  .role-top{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;}
+  .role-co{font-family:var(--display);font-weight:500;font-size:11pt;color:var(--ink);}
+  .role-when{font-size:7.6pt;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap;}
+  .role-title{font-size:8.4pt;font-weight:600;color:var(--forest-soft);margin-top:.05rem;margin-bottom:.45rem;}
+  .role-title .stat{color:var(--clay);font-style:italic;font-family:var(--display);font-weight:400;}
+  .bul{list-style:none;}
+  .bul li{position:relative;padding-left:.85rem;font-size:8.6pt;line-height:1.55;color:var(--ink-2);margin-bottom:.22rem;}
+  .bul li::before{content:'';position:absolute;left:0;top:.42em;width:4px;height:4px;background:var(--clay);border-radius:1px;}
 
-    .contact span + span::before {
-      content: '·';
-      padding-right: 12px;
-      color: #ccc;
-    }
+  /* Two-up lower sections */
+  .grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;margin-top:1.5rem;break-inside:avoid;page-break-inside:avoid;}
+  .skillgroup{margin-bottom:.7rem;break-inside:avoid;}
+  .skillgroup h4{font-size:8.4pt;font-weight:700;color:var(--ink);margin-bottom:.12rem;}
+  .skillgroup p{font-size:8pt;color:var(--ink-3);line-height:1.5;}
 
-    /* ─── SECTION ─────────────────────────────────────── */
-    .section {
-      margin-bottom: 11px;
-    }
+  .sign{font-family:var(--script);font-size:26pt;color:var(--forest);line-height:1;margin-top:1.4rem;}
+  .foot{margin-top:.5rem;font-size:7.4pt;color:var(--ink-3);letter-spacing:.04em;}
 
-    .section-title {
-      font-size: 6pt;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #999;
-      padding-bottom: 3px;
-      border-bottom: 0.5px solid #e0e0e0;
-      margin-bottom: 7px;
-    }
-
-    /* ─── PROFILE ─────────────────────────────────────── */
-    .profile-text {
-      font-size: 8.5pt;
-      line-height: 1.65;
-      color: #333;
-    }
-
-    /* ─── EXPERIENCE ──────────────────────────────────── */
-    .experience-list {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .role {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 14px;
-      padding: 8px 0;
-      border-bottom: 0.5px solid #ebebeb;
-    }
-
-    .role:first-child { padding-top: 0; }
-    .role:last-child  { border-bottom: none; padding-bottom: 0; }
-
-    .role-meta {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .role-logo {
-      margin-bottom: 5px;
-      line-height: 0;
-    }
-
-    .role-logo svg {
-      display: block;
-    }
-
-    .sky-logos {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .sky-logos svg {
-      display: block;
-    }
-
-    .role-period {
-      font-size: 6.5pt;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #999;
-      line-height: 1.3;
-      margin-bottom: 2px;
-    }
-
-    .role-title {
-      font-size: 6.5pt;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #666;
-    }
-
-    .role-bullets {
-      list-style: none;
-      padding: 0;
-      padding-top: 1px;
-    }
-
-    .role-bullets li {
-      font-size: 8pt;
-      line-height: 1.55;
-      color: #333;
-      padding-left: 11px;
-      position: relative;
-      margin-bottom: 2.5px;
-    }
-
-    .role-bullets li:last-child { margin-bottom: 0; }
-
-    .role-bullets li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: #ccc;
-      font-size: 6.5pt;
-      top: 2px;
-    }
-
-    /* ─── SKILLS ──────────────────────────────────────── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3px 14px;
-    }
-
-    .skill {
-      font-size: 8pt;
-      color: #333;
-      line-height: 1.4;
-      padding-left: 9px;
-      position: relative;
-    }
-
-    .skill::before {
-      content: '·';
-      position: absolute;
-      left: 0;
-      color: #bbb;
-    }
-
-    /* ─── FOOTER ──────────────────────────────────────── */
-    .footer {
-      margin-top: 10px;
-      padding-top: 8px;
-      border-top: 0.5px solid #e0e0e0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .footer-label {
-      font-size: 6pt;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #999;
-      margin-bottom: 2px;
-    }
-
-    .footer-value {
-      font-size: 8pt;
-      color: #333;
-      line-height: 1.6;
-    }
-  </style>
+  @media print{
+    body{background:#fff;}
+    .toolbar{display:none;}
+    .page-wrap{padding:0;}
+    .sheet{box-shadow:none;width:auto;min-height:auto;padding:0;}
+    @page{size:A4;margin:13mm 14mm;}
+  }
+</style>
 </head>
 <body>
-
-<!-- ─── HEADER ──────────────────────────────────────────── -->
-<header>
-  <div class="name">Gareth Winter</div>
-  <div class="headline">Creative Director &nbsp;·&nbsp; Storyteller &nbsp;·&nbsp; Brand Innovator</div>
-  <div class="contact">
-    <span>07414 716 933</span>
-    <span>garethwrwinter@outlook.com</span>
-    <span>garethwintercreativedirector.com</span>
-    <span>LinkedIn</span>
+  <div class="toolbar">
+    <span>Tip: press the button, then choose “Save as PDF”, A4, default margins.</span>
+    <button onclick="window.print()">Save as PDF</button>
   </div>
-</header>
 
-<!-- ─── PROFILE ─────────────────────────────────────────── -->
-<section class="section">
-  <div class="section-title">Profile</div>
-  <p class="profile-text">Creative Director with 20+ years building brands that move people, and numbers. Eleven years inside Sky's creative agency contributed to Promax UK Agency of the Year and campaigns that inspired 1.7 million people to cycle for the first time. Since then: grew Veloforte's revenue 93% in 18 months, led Go City's creative turnaround, and now direct brand and content strategy for Mindvalley's 3M+ global community. Hands-on from strategy to shoot — writing, designing, directing, producing. Increasingly building AI-powered creative systems to scale output without sacrificing craft.</p>
-</section>
+  <div class="page-wrap">
+  <main class="sheet">
 
-<!-- ─── EXPERIENCE ───────────────────────────────────────── -->
-<section class="section">
-  <div class="section-title">Experience</div>
-  <div class="experience-list">
-
-    <!-- MINDVALLEY -->
-    <div class="role">
-      <div class="role-meta">
-        <div class="role-logo">
-          <svg style="height:22px;width:auto" viewBox="0 0 500 100.22" xmlns="http://www.w3.org/2000/svg"><defs><style>.st0{fill:#111}</style></defs><path class="st0" d="M16.1,29.25v41.56H5.53V12.85h10.28l17.91,22.89,18.36-22.82h9.9v57.88h-10.58V29.01l-17.3,21.08h-1.21l-16.77-20.85h-.02Z"/><path class="st0" d="M101.9,70.81h-11.18V27.36h9.44l.98,9.07c2.72-6.2,8.31-10.28,16.62-10.28,11.79,0,18.29,7.48,18.29,19.12v25.54h-11.18v-22.82c0-7.78-2.72-12.54-10.73-12.54s-12.24,5.21-12.24,14.05v21.31h0Z"/><path class="st0" d="M180.72,62.05c-2.72,6.04-8.39,9.82-17,9.82-12.24,0-21.01-7.25-21.01-22.52v-.6c0-14.51,8.54-22.52,21.38-22.52,7.63,0,13.15,3.1,16.17,8.46V12.93h10.81v57.88h-9.37l-.98-8.76h0ZM180.65,49.28v-.45c0-8.39-5.06-13.6-13.3-13.6-8.92,0-13.96,5.06-13.96,13.6v.53c0,8.92,5.34,13.22,13.66,13.22s13.6-4.91,13.6-13.3Z"/><path class="st0" d="M215.81,70.81l-19.65-43.45h11.86l13.07,31.21,13.53-31.21h12.01l-20.63,43.45h-10.2.01Z"/><path class="st0" d="M300.7,70.81V12.93h11.11v57.88h-11.11Z"/><path class="st0" d="M320.56,70.81V12.93h11.11v57.88h-11.11Z"/><path class="st0" d="M362.99,72.1c-16.85,0-24.33-8.76-24.33-22.06v-.68c0-13.45,9.07-23.2,24.86-23.2s24.18,9.9,24.18,22.37v4.61h-38.31c1.06,6.57,5.67,10.05,14.21,10.05,6.27,0,9.75-1.81,11.49-5.21h12.09c-3.48,9.52-11.71,14.13-24.18,14.13h-.01ZM349.54,44.82h27.2c-.98-6.57-5.14-10.05-13-10.05s-12.85,3.7-14.21,10.05h0Z"/><path class="st0" d="M390.87,88.34v-9.6h5.52c6.5,0,8.46-1.66,11.33-7.25l1.06-2.27-20.25-41.86h11.94l13.37,29.09.45,1.74.53-1.66,13.22-29.17h11.79l-21.99,46.02c-6.35,13.07-9.14,14.96-21.76,14.96h-5.21Z"/><path class="st0" d="M76.51,28.05c-2.29,0-4.21-.22-5.79-.71v43.47h11.33V27.3c-1.57.51-3.42.75-5.54.75h0Z"/><path class="st0" d="M76.57,23.4c4,0,6.16-1.46,6.16-5.84s-2.1-5.91-6.16-5.91h.02c-4.06,0-6.16,1.71-6.16,5.91s2.16,5.84,6.16,5.84c0,0-.02,0-.02,0Z"/><g><path class="st0" d="M439.33,12.78c1.97.16,3.94.42,5.9.7,2.82.41,5.63.92,8.41,1.6,2.62.64,5.39,1.34,7.76,2.66,4.15,2.3,4.98,7.1,4.98,11.48v8.89c-18.89-9.67-27.06-25.33-27.06-25.33h0Z"/><path class="st0" d="M496.82,12.78c-1.97.16-3.94.42-5.9.7-2.82.41-5.63.92-8.41,1.6-2.62.64-5.39,1.34-7.76,2.66-4.15,2.3-4.98,7.1-4.98,11.48v8.89c18.89-9.67,27.06-25.33,27.06-25.33h0Z"/></g><path class="st0" d="M282.53,62.01c-3.17,6.12-9.9,10.58-20.25,10.58s-15.94-4.38-15.94-11.94c0-4.91,2.12-8.61,6.12-10.81,4-2.27,7.54-2.82,18.02-4.09,6.08-.74,11.53-1.06,11.53-1.06v-3.91c0-3.32-2.64-5.82-10.43-5.82-8.69,0-12.09,2.87-12.54,8.16h-11.41c.98-10.5,9.14-16.47,23.2-16.47,15.19,0,21.84,5.06,21.84,16.25v28.41h-8.99l-1.13-9.29h-.02ZM281.98,51.6s-4.74.36-9.65.96c-6.5.68-9.37,1.21-11.41,2.42-1.89,1.13-2.98,2.45-2.98,4.41v.08c0,3.17,3.24,4.92,7.89,4.88,9.67-.08,16.14-6.4,16.14-12.75h0Z"/></svg>
-        </div>
-        <div class="role-period">Oct 2024 – Present</div>
-        <div class="role-title">Creative Director</div>
+    <header class="head">
+      <div>
+        <div class="name">Gareth Winter</div>
+        <div class="title">Creative Director &amp; Head of Content · Brand, Film, Performance Marketing &amp; AI</div>
       </div>
-      <ul class="role-bullets">
-        <li>Lead creative strategy and brand direction for the world's leading personal transformation platform — 3M+ students across 190 countries.</li>
-        <li>Direct original content with world-class talent.</li>
-        <li>Building AI-powered creative systems that scale content output without sacrificing quality or brand integrity.</li>
-      </ul>
-    </div>
-
-    <!-- GO CITY -->
-    <div class="role">
-      <div class="role-meta">
-        <div class="role-logo">
-          <svg style="height:28px;width:auto" viewBox="0 0 100 48" xmlns="http://www.w3.org/2000/svg"><defs><style>.st0{fill:#111}</style></defs><path class="st0" d="M29.76,14.66c-4.44,0-8.05,3.62-8.05,8.08s3.61,8.08,8.05,8.08,8.05-3.62,8.05-8.08-3.61-8.08-8.05-8.08ZM29.76,27.66c-2.71,0-4.91-2.21-4.91-4.93s2.2-4.93,4.91-4.93,4.91,2.21,4.91,4.93-2.2,4.93-4.91,4.93Z"/><path class="st0" d="M99.84,19.86v-4.85h-3.14v8.94c0,2.04-1.66,3.7-3.69,3.7s-3.69-1.66-3.69-3.7v-8.94h-3.14v8.94c0,3.78,3.06,6.85,6.83,6.85,1.36,0,2.63-.4,3.69-1.09v1.67c0,1.79-1.45,3.25-3.24,3.25v3.15c3.52,0,6.38-2.87,6.38-6.4v-11.52Z"/><path class="st0" d="M14.24,18.74v3.15h2.34v5.46h-6.78c-1.63,0-3.17-.62-4.31-1.74-.02-.02-.04-.04-.06-.06-1.35-1.35-2.1-3.15-2.11-5.06,0-1.91.73-3.71,2.07-5.07,1.28-1.3,2.99-2.06,4.81-2.14,1.81-.08,3.56.53,4.94,1.7l2.03-2.4c-1.98-1.69-4.5-2.56-7.1-2.45-2.62.11-5.07,1.2-6.92,3.07C1.21,15.17.16,17.76.17,20.5s1.09,5.32,3.03,7.27c.03.03.06.06.09.09,1.74,1.7,4.05,2.63,6.5,2.63h9.93v-11.76h-5.48Z"/><path class="st0" d="M70.97,18.15h4.81v12.34h3.14v-12.34h4.79v-3.15h-12.73v3.15h0Z"/><path class="st0" d="M54.07,27.66c-3.96,0-7.18-3.23-7.18-7.2s3.22-7.2,7.18-7.2c2.47,0,4.74,1.25,6.07,3.35l2.65-1.68c-1.91-3.02-5.16-4.82-8.72-4.82-5.69,0-10.32,4.64-10.32,10.34s4.63,10.34,10.32,10.34c1.82,0,3.62-.48,5.19-1.4,1.52-.89,2.8-2.16,3.69-3.68l-2.7-1.6c-1.29,2.18-3.65,3.54-6.18,3.54h0Z"/><path class="st0" d="M68.53,15.01h-3.14v15.49h3.14v-15.49Z"/><path class="st0" d="M7.5,20.31c0,1.34,1.08,2.43,2.42,2.43s2.42-1.09,2.42-2.43-1.08-2.43-2.42-2.43-2.42,1.09-2.42,2.43Z"/></svg>
-        </div>
-        <div class="role-period">Mar 2024 – Oct 2024</div>
-        <div class="role-title">Creative Director</div>
+      <div class="contact">
+        <div class="loc">Oakham, UK</div>
+        <div>Commutes to London · Available globally</div>
+        <div><a href="mailto:garethwrwinter@outlook.com">garethwrwinter@outlook.com</a></div>
+        <div>07414 716 933</div>
+        <div><a href="https://garethwintercreativedirector.com">garethwintercreativedirector.com</a></div>
+        <div><a href="https://www.linkedin.com/in/gareth-winter-20035221/">linkedin.com/in/gareth-winter</a></div>
       </div>
-      <ul class="role-bullets">
-        <li>Led creative strategy for a global travel brand operating across 30+ cities worldwide.</li>
-        <li>Delivered 30% audience growth within the first month through sharpened creative positioning and campaign execution.</li>
-        <li>Reduced customer acquisition costs through performance-led creative iteration across paid and organic channels.</li>
-      </ul>
-    </div>
+    </header>
 
-    <!-- VELOFORTE -->
-    <div class="role">
-      <div class="role-meta">
-        <div class="role-logo">
-          <svg style="height:36px;width:auto" viewBox="0 0 1620.36 1080" xmlns="http://www.w3.org/2000/svg"><defs><style>.st0{fill:#111}</style></defs><path class="st0" d="M1598.97,381.69c0,15.5-13.39,29.89-27.9,29.89-11.16,0-18.48-7.69-18.36-18.97,0-15.5,13.39-29.89,27.9-29.89,11.16,0,18.48,7.69,18.36,18.98h0ZM1580.74,367.55c-11.9,0-23.19,12.28-23.19,25.18-.12,8.68,5.08,14.01,13.39,14.01,3.1,0,6.2-.87,8.93-2.23l-5.21-12.9c-.87-1.99.62-4.09,2.36-4.09,8.68,0,8.19-11.54,1.49-11.54-4.46,0-7.19,1.36-8.93,4.59-.87,1.49-1.86,2.11-3.23,1.61-1.36-.5-1.86-1.74-.99-3.35,2.6-4.96,6.94-7.32,13.15-7.32,11.66,0,13.02,17.49.99,20.09l4.22,10.42c6.08-4.84,10.42-12.53,10.42-20.46.12-8.68-5.08-14.01-13.39-14.01h-.01ZM1565.36,397.07l5.08-14.26c.62-1.74,1.61-2.36,2.98-1.86,1.36.5,1.86,1.61,1.24,3.35l-5.08,14.26c-.62,1.74-1.61,2.36-2.98,1.86-1.36-.5-1.86-1.61-1.24-3.35Z"/><path class="st0" d="M429.49,331.87c12.36-14.71,25.25-22.17,38.32-22.17,4.18,0,7.88-1.5,10.72-4.34,2.84-2.84,4.34-6.54,4.34-10.72s-1.63-8-4.73-10.86c-3.02-2.78-6.66-4.2-10.81-4.2-20.21,0-38.94,9.25-55.66,27.49-16.05,17.51-30.58,39.25-43.18,64.62-12.48,25.12-27.67,59.31-45.17,101.63-16.48,39.92-30.78,72.47-42.51,96.73-11.58,23.93-24.56,44.36-38.57,60.71-13.31,15.53-27.18,23.4-41.23,23.4-10.4,0-24.22-4.1-24.22-39.55,0-13.89,4.06-36.92,12.06-68.46,8.09-31.9,17.66-65.41,28.42-99.6,10.32-32.79,19.31-58.95,26.74-77.82,18.25-5.16,38.18-11.91,51.39-20.56,14.85-9.72,22.38-20.88,22.38-33.16,0-9.1-3.21-16.63-9.54-22.38-6.19-5.63-18.17-8.73-27.72-8.73-12.65,0-24.48,6.31-35.17,18.75-9.53,11.09-17.45,24.46-23.56,39.77l-38.36,6.69c-31.94,4.79-59.04,10.23-80.52,16.16-22,6.08-41.31,15.91-57.42,29.23-16.78,13.87-25.29,32.97-25.29,56.78,0,19.38,5.9,35.88,17.54,49.05,11.79,13.36,26.91,20.13,44.94,20.13,4.55,0,8.24-1.38,10.96-4.1,2.57-2.57,4.1-5.91,4.55-9.92l.03-.56c0-4.15-1.41-7.79-4.2-10.82-2.85-3.09-6.61-4.72-10.86-4.72-9.14,0-16.7-3.46-23.11-10.57-6.55-7.25-9.73-16.26-9.73-27.54,0-16.03,6.23-28.42,19.05-37.89,13.46-9.94,29.31-17.24,47.1-21.69,18.34-4.58,42.53-9.31,71.9-14.04,8.06-1.27,14.93-2.38,20.77-3.35-13.67,37.62-27.36,80.57-40.73,127.82-14.43,50.98-21.74,88.83-21.74,112.49,0,22.43,4.5,39.65,13.37,51.19,9.18,11.94,22.96,18,40.97,18,21.15,0,40.75-9.56,58.27-28.42,16.85-18.15,32.03-40.62,45.12-66.79s28.7-61.11,46.85-104.74c16.48-39.62,30.54-71.53,41.8-94.83,11.09-22.96,23.35-42.51,36.45-58.11h-.01ZM268.44,320.98c4.67-5.19,8.85-7.93,12.09-7.93.67,0,2.9,0,3.91.98.75.73.79,2.05.79,2.72,0,.62-.46,4.02-9.44,10.57h0c-4.75,2.77-11.14,4.18-15.88,5.13,2.61-4.23,5.46-8.07,8.53-11.48h0Z"/><path class="st0" d="M1562.97,543.01l-.35-.14c-3.71-1.39-7.47-1.39-11.17,0-3.77,1.41-6.62,4.01-8.47,7.72l-.12.25c-12.76,29.55-26.78,51.55-41.68,65.38-14.67,13.61-30.56,20.22-48.57,20.22-12.97,0-23.01-3.32-29.83-9.87-6.86-6.57-10.19-15.65-10.19-27.76,0-9.23,1.45-19.26,4.3-29.85,32.12-8.08,60.9-20.13,85.59-35.86,26.49-16.87,39.92-37.95,39.92-62.66,0-12.68-4.39-22.76-13.06-29.95-8.39-6.96-19.38-10.49-32.65-10.49-19.25,0-37.81,9.48-55.16,28.18-16.77,18.07-30.71,40.32-41.43,66.15-4.09,9.86-7.48,19.46-10.17,28.76-12.19,25.42-28.22,46.61-41.06,62.45-11.4,14.06-23.84,20.9-38.03,20.9-3.23,0-5.55-1.05-7.3-3.33-2.01-2.59-3.03-6.56-3.03-11.79,0-6.54,1.79-16.24,5.32-28.83,1.75-6.24,4.25-14.27,7.47-24.01.32-.73.65-1.46.97-2.2l.16-.41c.48-1.45.81-2.68,1-3.76,3.03-8.97,6.57-19.17,10.65-30.59,12.01-33.57,14.69-40.64,15.22-41.87l10.47-30.5h35.71c4.18,0,7.88-1.5,10.72-4.34s4.34-6.54,4.34-10.72c0-3.83-1.41-7.31-4.2-10.34-2.85-3.09-6.61-4.72-10.86-4.72h-24.96c2.97-8.23,6.41-17.96,10.28-29.04,4.86-13.95,8.16-23.69,9.82-28.96,1.83-4.74,1.18-9.47-1.87-13.69-3.02-4.17-7.32-6.38-12.43-6.38-6.91,0-11.98,3.56-14.29,10.03l-.03.1c-2.59,7.76-6.69,19.75-12.2,35.63-4.83,13.93-8.67,24.78-11.45,32.32h-33.41c-4.25,0-8,1.63-10.86,4.73-2.78,3.02-4.2,6.5-4.2,10.33,0,4.17,1.5,7.88,4.34,10.72s6.54,4.34,10.72,4.34h23.09l-22.02,61.74c-5.07,12.78-9.59,25.34-13.53,37.56-11.4,24.56-24.28,41.24-33.83,53.58-1.66,2.14-3.21,4.15-4.64,6.05-9.18,12.19-18.79,18.37-28.58,18.37-3.03,0-9.32,0-9.37-14.96.62-9.12,2-17.58,4.12-25.16l.07-.27c1.22-5.51,6.09-20.89,14.46-45.71,8.37-24.81,14.23-41.59,17.41-49.86l.08-.24c.49-1.49.73-3.26.73-5.39,0-7.15-3.35-12.38-9.43-14.72l-.22-.08c-4.77-1.59-10.91-3.53-18.25-5.76-18.08-6.12-31.19-11.02-39.08-14.63.65-2.05,1.33-4.17,2.06-6.34,1.32-3.97,2.41-7.74,3.23-11.2.88-3.74,1.33-7.27,1.33-10.49,0-10.76-2.91-19.6-8.64-26.26-5.92-6.87-18.05-10.36-28.14-10.36-9.29,0-17.39,3.3-24.08,9.8-6.73,6.54-10.14,15.4-10.14,26.34,0,15.92,11.85,30.02,27.35,41.97l-4.27,10.68s-24.12,55.75-32.66,71.44c-8.3,15.23-15.86,25.43-23.9,33.77-1.4,1.45-2.75,2.85-4.04,4.23-7.87,8.44-15.84,12.54-24.36,12.54-7.04,0-12.57-1.53-16.79-4.63-.03.04-.06.08-.08.12-.52-.38-1.03-.77-1.51-1.2,10.45-18.14,19.05-37.59,25.61-57.87,6.99-21.64,10.54-40.45,10.54-55.91s-4.61-29.63-13.7-39.95c-9.23-10.46-22.39-15.95-39.09-16.3h-.1c-13.16,0-26.08,4.6-38.41,13.67-11.99,8.83-23.23,21.97-33.39,39.02-14.32,23.42-24.96,46.55-31.87,69.22-8.23,17.4-18.27,34.22-28.09,47.56-6.43,8.61-13.58,17.33-21.47,26.13-15.06,16.79-33.3,29.69-54.33,38.45,13.21-37.44,25.1-71.03,35.65-100.66.15-.34.31-.68.46-1.02l.16-.42c.28-.84.5-1.56.67-2.2,14.66-41.18,26.66-74.53,35.86-99.7h34.83c3.83,0,7.31-1.41,10.34-4.2,3.09-2.85,4.72-6.61,4.72-10.86,0-3.91-1.54-7.43-4.58-10.49-3-2.99-6.62-4.57-10.47-4.57h-23.38c3.15-8.12,7.08-18.02,11.73-29.53l.04-.11c9.07-24.09,19.28-44.43,30.33-60.48,10.23-14.84,20.76-22.09,31.31-21.55h.25c5.21,0,8.85,1.94,11.45,6.08,2.76,5.35,7.53,8.29,13.46,8.29,1.55,0,3.43-.39,5.9-1.22l.48-.16.44-.26c6.8-3.96,8.23-9.49,8.23-13.42,0-2.51-.71-4.82-2.12-6.87-3.61-7.4-8.89-13.15-15.71-17.1-6.82-3.94-14.59-5.94-23.1-5.94-17.25,0-33.63,8.84-48.69,26.28-14.45,16.73-28.16,42.01-40.76,75.13l-15.54,40.84h-35.35c-4.25,0-8,1.63-10.86,4.73-2.78,3.02-4.2,6.5-4.2,10.33,0,4.17,1.5,7.88,4.34,10.72s6.54,4.34,10.72,4.34h23.92c-9.87,26.45-20.94,57.41-33.02,92.32-7.88,17.83-20.43,31.32-28.82,40.32l-.46.5c-7.87,8.44-15.84,12.54-24.36,12.54-1.8,0-3.49-.11-5.09-.31-5.41-.67-9.76-2.47-13.13-5.46,10.45-18.14,19.05-37.59,25.61-57.87,6.99-21.64,10.54-40.45,10.54-55.91s-4.61-29.63-13.7-39.95c-9.23-10.46-22.39-15.95-39.09-16.3h-.1c-13.16,0-26.08,4.6-38.41,13.67-11.99,8.83-23.23,21.97-33.39,39.02-14.32,23.42-24.96,46.55-31.87,69.22-8.36,17.68-18.77,33.5-28.74,46.94-4.5,6.06-8.91,11.65-13,16.7-11.4,14.06-23.84,20.9-38.03,20.9-3.23,0-5.55-1.05-7.3-3.33-2.01-2.59-3.02-6.56-3.02-11.79,0-5.97,2.7-21.43,15.55-61.16l26.3-75.57c3.48-9.2,8.49-23.24,14.88-41.76l24.89-72.75c1.41-3.81,1.16-7.81-.72-11.59-1.86-3.71-4.7-6.3-8.46-7.71l-.55-.17c-3.64-.91-7.3-.57-10.88.99-3.77,1.65-6.52,4.53-7.94,8.33l-24.95,72.92-14.37,41.19-25.67,73.33c-.2.34-.4.69-.58,1.05l-.12.25c-10.87,25.18-28.36,50.43-46.79,67.53-14.67,13.61-30.56,20.22-48.57,20.22-12.97,0-23.01-3.32-29.83-9.87-6.86-6.57-10.19-15.65-10.19-27.76,0-9.23,1.45-19.26,4.3-29.85,32.12-8.08,60.9-20.13,85.59-35.86,26.49-16.87,39.92-37.95,39.92-62.66,0-12.68-4.4-22.76-13.06-29.95-8.39-6.96-19.38-10.49-32.65-10.49-19.25,0-37.81,9.48-55.16,28.18-16.77,18.07-30.71,40.32-41.43,66.15-10.71,25.81-16.64,49.82-17.62,71.45-.68,21.09,5.18,38.34,17.41,51.26,12.26,12.96,29.19,19.53,50.33,19.53,25.4,0,48.18-8.63,67.71-25.66,3.11-2.71,7.61-6.89,12.92-12.51,1.07,9.87,4.46,18.29,10.12,25.1,7.19,8.67,17.27,13.06,29.95,13.06,21.83,0,40.9-9.03,56.67-26.83.39-.44.8-.9,1.2-1.36,3.95-4.51,8.29-9.67,12.8-15.43,2.18,21.72,12.69,43.63,46.2,43.63,11.86,0,24.12-4.42,36.42-13.13,10.65-7.54,20.61-17.11,29.66-28.48,5.49,3.82,11.39,6.65,17.65,8.47,5.65,1.65,11.6,2.49,17.82,2.49,9.42,0,18.35-2.26,26.71-6.72-4.88,13.62-10.42,29.08-16.64,46.4-10.05,2.55-21.74,4.87-34.8,6.9l-.13.02c-56.43,10.35-85.05,33.11-85.05,67.67,0,15.35,4.76,27.9,14.16,37.31,9.4,9.39,21.95,14.16,37.3,14.16,18.66,0,36.11-9.03,51.88-26.83,14.85-16.77,28.34-41.73,40.1-74.21,33.42-10.15,61.42-26.36,83.27-48.19,3.41-3.41,7.46-7.64,11.88-12.59,3.95-4.51,7.71-11.06,12.23-16.82,2.18,21.72,12.69,43.63,46.2,43.63,11.86,0,24.12-4.42,36.42-13.13,10.65-7.54,20.61-17.11,29.66-28.48,5.49,3.82,11.39,6.65,17.65,8.47.01-.03.03-.06.04-.09,5.69,1.68,11.67,2.52,17.94,2.52,15.65,0,29.96-6.2,42.52-18.42l1-.97c9.44-9.17,17.17-16.82,27.8-33.82,6.18-9.89,11.99-23.02,14.47-28.21l12.62-28.27c10.19-21.75,15-32.46,17.33-37.94,4.24,1.9,9.1,3.84,14.52,5.8,6.68,2.42,16.03,5.6,28.5,9.69-2.67,7.47-7,20.31-13.11,38.89-7.77,23.64-12.5,38.78-14.44,46.21-3.3,11.87-4.97,22.79-4.97,32.47,0,13.26,3.35,24.14,9.96,32.35,6.87,8.55,16.64,12.89,29.04,12.89h.48c17.41,0,33.51-8.4,47.85-24.96,1.95-2.25,4.1-4.73,6.41-7.48,1.6,7.43,4.66,13.92,9.19,19.37,7.19,8.67,17.27,13.06,29.95,13.06,21.83,0,40.9-9.03,56.67-26.83,5.16-5.83,11.05-12.87,17.19-20.95,2.69,10.94,7.75,20.4,15.19,28.26,12.26,12.96,29.19,19.53,50.33,19.53,25.4,0,48.18-8.63,67.71-25.66,19.13-16.68,36.88-42.88,52.76-77.86l.19-.49c.87-2.63,1.21-4.14,1.21-5.41,0-6.38-3.24-11.4-9.13-14.12v-.02h0ZM1458.74,484.02c12.19-15.87,24.96-23.91,37.95-23.91,5.42,0,9.62.88,12.48,2.62,1.34.82,3.11,2.5,3.11,7.71,0,13.92-8.62,26-26.36,36.94h0c-16.11,9.94-35.04,18.72-56.38,26.17,8.44-18.64,18.24-35.26,29.2-49.52h0ZM432.27,484.02c12.19-15.87,24.96-23.91,37.95-23.91,5.42,0,9.62.88,12.48,2.62,1.34.82,3.11,2.5,3.11,7.71,0,13.92-8.62,26-26.36,36.94h0c-16.11,9.94-35.04,18.72-56.38,26.17,8.44-18.64,18.24-35.26,29.2-49.52h0ZM733.68,560.81s-1.86-9.38-3.67-12.54c-2.46-4.3-7.09-6.18-12.23-6.18-3.65,0-5.63.57-8.42,2.66-2.89,2.17-5.96,6.26-6.52,9.67-1.97,7.95-.9,15.87.54,24.24,1.38,8.01,3.85,13.69,6.01,20.3-7.87,10.78-16.16,19.82-24.67,26.89-8.45,7.02-16.32,10.58-23.39,10.58-7.48,0-16.08-2.75-16.08-24.22,0-15.93,2.64-32.63,7.89-49.99.17-.36.34-.71.51-1.07l.21-.54c.51-1.53.85-2.82,1.03-3.94,6.2-18.73,15.38-38.21,27.51-58.33,7.03-11.92,14.66-21.5,22.68-28.46,7.48-6.5,15-9.79,22.35-9.79s12.49,2.11,16.82,6.44c4.33,4.33,6.44,10.62,6.44,19.22,0,10.67-2.41,23.51-6.28,38.4-2.8,10.75-6.13,23.39-10.73,36.65h0ZM736.84,754.3c-10.12,11.58-20.71,17.21-32.4,17.21-6.63,0-11.72-1.93-15.57-5.9-3.85-3.98-5.74-9.12-5.78-15.71.88-9.54,5.54-16.94,14.25-22.61,9.43-6.14,24.98-11.13,46.22-14.82,3.31-.51,9.31-1.68,17.91-3.48-7.12,19.49-15.39,34.71-24.65,45.31h.02ZM1006.46,542.14c-3.65,0-5.63.57-8.42,2.66-2.89,2.17-5.96,6.26-6.52,9.67-1.97,7.95-.9,15.87.54,24.24,1.38,8.01,3.85,13.69,6,20.3-7.87,10.78-16.16,19.82-24.67,26.89-8.45,7.02-16.32,10.58-23.39,10.58-7.48,0-16.08-2.75-16.08-24.22,0-15.93,2.64-32.63,7.89-49.99.17-.36.34-.71.51-1.07l.21-.54c.51-1.53.85-2.82,1.03-3.94,6.2-18.73,15.38-38.22,27.51-58.33,7.03-11.92,14.66-21.5,22.68-28.46,7.48-6.5,15-9.79,22.35-9.79s12.49,2.11,16.82,6.44c4.33,4.33,6.44,10.62,6.44,19.22,0,10.67-2.41,23.51-6.28,38.4-2.8,10.75-6.13,23.39-10.73,36.65-.03-.04-1.86-9.38-3.67-12.54-2.46-4.3-7.09-6.18-12.23-6.18h.01ZM1152.12,441.75c-2.1-1.23-3.57-2.57-5.1-4.04-2.64-2.53-4.16-6.47-4.16-9.48,0-3.3,4.14-9.13,9.29-3.87,1.06,1.08,2.78,3.97,2.9,7.64.08,2.4.19,4.75-2.93,9.75Z"/></svg>
-        </div>
-        <div class="role-period">Jan 2022 – Mar 2024</div>
-        <div class="role-title">Creative Director</div>
+    <div class="layout">
+      <p class="eyebrow" style="margin-top:1.3rem;">Profile</p>
+      <p class="summary">
+        Creative Director and Head of Content with twenty years turning craft into commercial results. I run the entire creative output of one of the world's best-known personal-growth companies, brand, content, film, performance marketing and social, working directly with the CEO. I'm as comfortable directing a film as I am reading a P&amp;L: I steer <b>seven-figure monthly ad spend</b> and build the AI systems that let a lean team produce like a large one. I believe in trust before transaction, in fewer things done properly, and in work good enough that people share it without being asked.
+      </p>
+
+      <div class="results">
+        <div class="r"><div class="n">$1M<span class="c">+</span></div><div class="l">Monthly ad spend</div></div>
+        <div class="r"><div class="n">+77<span class="c">%</span></div><div class="l">New-member growth</div></div>
+        <div class="r"><div class="n">~2<span class="c">×</span></div><div class="l">Customer LTV</div></div>
+        <div class="r"><div class="n">93<span class="c">%</span></div><div class="l">Revenue growth</div></div>
+        <div class="r"><div class="n">1.7<span class="c">M</span></div><div class="l">Inspired to cycle</div></div>
+        <div class="r"><div class="n">20<span class="c">+</span></div><div class="l">Years</div></div>
       </div>
-      <ul class="role-bullets">
-        <li>Built the brand from zero: visual identity, tone of voice, packaging, film, B2B partnerships, and influencer infrastructure.</li>
-        <li>Drove 93% total revenue growth across 18 months; 60% e-commerce growth year-on-year.</li>
-        <li>Directed every production from brief to delivery, establishing Veloforte as the UK leader in natural sports nutrition.</li>
-      </ul>
-    </div>
 
-    <!-- LE BLANQ -->
-    <div class="role">
-      <div class="role-meta">
-        <div class="role-logo">
-          <svg style="height:22px;width:auto" viewBox="0 0 132 43" xmlns="http://www.w3.org/2000/svg"><defs><style>.st0{fill:#111}</style></defs><path class="st0" d="M8.4,20.42H1.31V6.97c0-.08-.01-.17-.05-.24-.03-.08-.08-.15-.14-.21-.06-.06-.13-.11-.21-.14-.08-.03-.16-.05-.25-.05-.09,0-.17.02-.26.05-.08.03-.15.08-.21.15-.06.06-.11.13-.14.21-.03.08-.05.16-.05.24v14.08c0,.17.06.34.19.46.06.06.14.11.22.14.08.03.17.05.25.05h7.74c.09,0,.17-.01.25-.04.08-.03.15-.08.21-.14.06-.06.11-.13.15-.21.03-.08.05-.16.05-.25,0-.08-.02-.17-.05-.25-.03-.08-.08-.15-.14-.21-.06-.06-.13-.11-.21-.14-.08-.03-.16-.05-.25-.04Z"/><path class="st0" d="M24.91,7.58c.08,0,.17-.01.25-.04.08-.03.15-.08.21-.14.06-.06.11-.13.15-.21s.05-.17.05-.25c0-.08-.02-.17-.05-.25-.03-.08-.08-.15-.15-.21-.06-.06-.13-.11-.21-.14-.08-.03-.16-.05-.25-.05l-8.68-.02c-.09,0-.17.01-.25.04s-.15.08-.21.15c-.06.06-.11.13-.15.2-.03.08-.05.16-.05.25v14.14c0,.08.01.17.05.25.03.08.08.15.15.2.06.06.13.11.21.15.08.03.16.05.25.05h8.68c.09,0,.17-.01.25-.05.08-.03.15-.08.21-.15.06-.06.11-.13.15-.2.03-.08.05-.16.05-.25,0-.08-.01-.17-.05-.25-.03-.08-.08-.15-.15-.2-.06-.06-.13-.11-.21-.15-.08-.03-.16-.05-.25-.05h-8.02v-5.78h6c.09,0,.17-.01.25-.05.08-.03.15-.08.21-.14.06-.06.11-.13.15-.21.03-.08.05-.16.05-.25,0-.08-.02-.17-.05-.25-.03-.08-.08-.15-.15-.2-.06-.06-.13-.11-.21-.14-.08-.03-.17-.05-.25-.05h-6v-5.78l8.02.02Z"/><path class="st0" d="M74.03,16.83h6.91l-3.45-8.19-3.45,8.19Z"/><path class="st0" d="M46.53,15.52c-.64-.56-1.47-.85-2.33-.83h-4.69v5.75h4.67c.86.02,1.7-.28,2.34-.85.3-.25.55-.57.71-.92.17-.35.25-.74.25-1.13,0-.39-.08-.77-.24-1.12-.16-.35-.41-.66-.71-.9Z"/><path class="st0" d="M46.22,12.53c.3-.26.55-.58.71-.94.17-.36.25-.75.25-1.15,0-.38-.08-.77-.24-1.11-.16-.35-.41-.66-.71-.9-.65-.55-1.48-.84-2.34-.82l-4.38.02v5.79h4.38c.86,0,1.7-.3,2.33-.88Z"/><path class="st0" d="M31.89,0v43l100.11-15.62V0H31.89ZM47.44,20.49c-.88.82-2.05,1.26-3.26,1.23h-5.32c-.09,0-.17-.01-.25-.05-.08-.03-.15-.08-.21-.15-.06-.06-.11-.13-.15-.2-.03-.08-.05-.16-.05-.25V6.97c0-.08.01-.17.05-.24.03-.08.08-.15.14-.21.06-.06.13-.11.21-.14s.17-.05.25-.05l5.04-.02c1.2-.03,2.38.4,3.27,1.19.42.36.76.82.99,1.32.23.51.35,1.06.34,1.61,0,.71-.19,1.4-.55,2.01-.35.61-.85,1.12-1.45,1.49.68.34,1.26.85,1.67,1.48.41.63.63,1.37.62,2.12,0,.56-.11,1.11-.35,1.62-.23.51-.58.96-1.01,1.33h0ZM65.06,21.54c-.06.06-.13.11-.21.14-.08.03-.16.05-.25.04h-7.74c-.09,0-.17-.01-.25-.05-.08-.03-.15-.08-.22-.14-.12-.12-.19-.29-.19-.46V7c0-.08.01-.17.05-.24.03-.08.08-.15.14-.21.06-.06.13-.11.21-.15.08-.03.17-.05.26-.05.09,0,.17.02.25.05.08.03.15.08.21.14.06.06.11.13.14.21.03.08.05.16.05.24v13.45h7.09c.09,0,.17.01.25.04.08.03.15.08.21.14.06.06.11.13.15.21s.05.16.05.25c0,.09-.02.17-.05.25-.03.08-.08.15-.15.21h0ZM84.03,21.33c-.03.08-.08.15-.14.21-.06.06-.13.11-.21.13-.08.04-.16.05-.25.05-.13,0-.26-.03-.37-.1-.11-.07-.19-.18-.23-.3l-1.36-3.2h-7.98l-1.36,3.2c-.04.12-.12.23-.23.3-.11.07-.24.11-.37.1-.09,0-.17-.02-.25-.05-.08-.03-.15-.07-.21-.13-.06-.06-.11-.13-.14-.21-.04-.08-.05-.16-.05-.25s.02-.17.05-.25l1.52-3.6h0s4.43-10.51,4.43-10.51c.02-.04.03-.07.06-.12l.04-.04s.04-.04.04-.05c0,0,.03-.02.05-.04.04-.03.05-.04.04-.03.07-.05.15-.08.23-.1h.05s.07-.01.08-.01c.02,0,.04,0,.07.01h.06c.09.01.17.05.24.1l.04.03s.05.04.05.04c.02.02.03.03.05.05.03.04.04.05.04.04.02.04.04.08.05.12l4.43,10.49h0s1.52,3.61,1.52,3.61c.04.08.06.16.06.25s-.02.17-.05.25h0ZM103.18,21.08v.04s0,.04-.01.06c0,.02,0,.04-.01.05,0,.02-.01.04-.02.06,0,.02-.02.04-.02.06,0,.02-.02.04-.03.05,0,.01-.02.03-.03.05s-.03.04-.04.05c0,0-.02.02-.04.04-.01,0-.02.02-.04.03,0,0-.01,0-.02.02,0,0-.02.02-.03.02-.02.01-.04.02-.07.03-.02,0-.03.02-.04.02-.02,0-.05.01-.08.02-.01,0-.03,0-.04.01-.04,0-.08.01-.12.01-.04,0-.09,0-.13-.01h-.04s-.06-.04-.09-.04c-.01-.01-.03-.02-.05-.03-.03-.01-.05-.03-.08-.04-.01-.01-.03-.02-.04-.03l-.06-.06h-.01s-.01-.02-.01-.02l-10-12.67v12.27c0,.08-.01.17-.05.25s-.08.15-.15.2c-.06.06-.13.11-.21.15-.08.03-.17.05-.25.05-.09,0-.17-.02-.25-.05-.08-.03-.15-.08-.21-.15-.06-.06-.11-.13-.15-.2-.03-.08-.05-.16-.05-.25V6.93c0-.14.03-.27.11-.38.08-.11.2-.19.33-.23.13-.05.27-.06.41-.02.13.04.25.12.33.24l10.01,12.67V6.93c0-.08.01-.17.04-.24.03-.08.08-.15.14-.21.06-.06.13-.11.21-.14.08-.03.16-.05.25-.05.09,0,.17.02.26.05.08.03.15.08.22.15.06.06.11.13.14.21.03.08.05.16.04.24v14.15ZM125.76,21.53c-.06.06-.13.11-.22.14-.08.03-.17.05-.25.05-.09,0-.17-.02-.25-.05-.08-.03-.15-.08-.21-.14l-1.79-1.76-.93-.91-1.64-1.61c-.06-.06-.11-.13-.14-.21-.03-.08-.05-.16-.05-.24,0-.08.01-.17.05-.24.03-.08.08-.15.14-.21.06-.06.13-.11.21-.14.08-.03.16-.05.25-.05.09,0,.17.02.26.05.08.03.15.08.21.15l1.61,1.58c.9-1.11,1.38-2.49,1.37-3.91.01-.85-.15-1.69-.48-2.47s-.82-1.49-1.44-2.08c-.6-.61-1.32-1.09-2.11-1.42-.79-.33-1.65-.49-2.51-.47-.86-.01-1.71.15-2.51.47-.8.33-1.51.81-2.11,1.42-.62.59-1.11,1.3-1.43,2.08-.33.78-.49,1.62-.48,2.47-.01.85.15,1.68.48,2.47.33.78.82,1.49,1.43,2.08.6.61,1.32,1.08,2.11,1.41.79.32,1.65.48,2.51.47.99.01,1.97-.21,2.86-.64l.17-.08c.14-.1.31-.15.48-.15.09,0,.17.03.25.07.08.04.14.09.2.16.06.07.1.14.13.22.03.08.04.17.03.26,0,.08-.02.17-.06.24-.04.08-.09.14-.15.2l-.05.03c-1.17.66-2.5.99-3.84.98-1.03.02-2.06-.18-3.01-.57-.95-.39-1.82-.97-2.53-1.7-.74-.7-1.33-1.55-1.73-2.49-.4-.94-.59-1.94-.58-2.96-.01-1.02.18-2.02.58-2.96.4-.94.99-1.79,1.73-2.49.72-.73,1.58-1.3,2.53-1.69.95-.39,1.98-.58,3.01-.56,1.03-.02,2.06.18,3.01.57.96.39,1.82.96,2.54,1.69.74.71,1.32,1.56,1.72,2.5.39.94.59,1.95.57,2.96.02,1.76-.6,3.47-1.73,4.84l1.81,1.78c.06.06.11.13.14.21.03.08.05.16.05.24,0,.08-.01.17-.05.24-.03.08-.08.15-.14.21h0Z"/></svg>
-        </div>
-        <div class="role-period">2021 – 2022</div>
-        <div class="role-title">Creative Director</div>
-      </div>
-      <ul class="role-bullets">
-        <li>Shaped creative strategy and brand content for an ultra-premium cycling lifestyle brand — luxury travel, iconic routes, and world-class hospitality.</li>
-        <li>Worked at the intersection of athletic performance and high-end experience, making something already beautiful feel that way on the page.</li>
-      </ul>
-    </div>
+      <section class="section">
+        <h2 class="section-h">Experience</h2>
 
-    <!-- SKY -->
-    <div class="role">
-      <div class="role-meta">
-        <div class="role-logo">
-          <div class="sky-logos">
-            <svg style="height:26px;width:auto" viewBox="0 0 316 300" xmlns="http://www.w3.org/2000/svg"><defs><style>.st0{fill:#111}</style></defs><path class="st0" d="M216.21,241.2c2.48,1.22,7.57,2.82,14.1,2.98,11.12.16,17.09-4.05,21.47-13.86l59.21-131.25c-2.48-1.22-7.91-2.82-12.34-2.82-7.57-.16-17.77,1.38-24.3,16.85l-19.25,44.93-37.52-60.9c-2.48-.72-8.47-1.76-12.68-1.76-13.38,0-20.79,4.93-28.34,13.14l-36.64,39.66,29.43,45.99c5.47,8.41,12.5,12.64,24.14,12.64,7.57,0,13.9-1.76,16.93-3.16l-35.46-52.8,25.02-26.48,41.22,64.22-25.02,52.64.02-.02h0ZM138.53,191.5c0,9.64-3.87,15.24-22.92,15.24-2.48,0-4.77-.16-6.87-.5V77.82c0-9.82,3.33-20.01,22.54-20.01,2.48,0,4.93.16,7.25.72v132.99-.02ZM99.23,172.05c0,18.07-11.8,31.25-35.92,33.85-17.43,1.94-42.79-.34-54.79-1.76-.34-1.94-.72-4.39-.72-6.31,0-15.78,8.47-19.29,16.55-19.29s21.47,1.38,31.37,1.38c10.74,0,14.1-3.71,14.1-7.03,0-4.55-4.21-6.31-12.68-8.09l-22.92-4.39c-19.03-3.49-29.23-16.67-29.23-30.53,0-16.85,11.96-31.07,35.58-33.51,17.77-1.94,39.62.16,51.62,1.76.34,1.94.72,4.05.72,6.15,0,15.78-8.29,19.11-16.39,19.11-6.15,0-15.66-1.06-26.78-1.06s-15.66,2.98-15.66,6.83c0,4.05,4.43,5.61,11.46,6.83l21.85,4.05c22.11,3.75,31.79,16.39,31.79,32.01h.05Z"/></svg>
-            <svg style="height:24px;width:auto" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg"><defs><style>.st0{fill:#111}</style></defs><path class="st0" d="M109.21,196.03c1.24.61,3.78,1.41,7.04,1.49,5.55.08,8.53-2.02,10.72-6.92l29.56-65.52c-1.24-.61-3.95-1.41-6.16-1.41-3.78-.08-8.87.69-12.13,8.41l-9.61,22.43-18.73-30.4c-1.24-.36-4.23-.88-6.33-.88-6.68,0-10.38,2.46-14.15,6.56l-18.29,19.8,14.69,22.96c2.73,4.2,6.24,6.31,12.05,6.31,3.78,0,6.94-.88,8.45-1.58l-17.7-26.36,12.49-13.22,20.58,32.06-12.49,26.28h.01ZM70.43,171.22c0,4.81-1.93,7.61-11.44,7.61-1.24,0-2.38-.08-3.43-.25v-64.11c0-4.9,1.66-9.99,11.25-9.99,1.24,0,2.46.08,3.62.36v66.39h0ZM50.81,161.51c0,9.02-5.89,15.6-17.93,16.9-8.7.97-21.36-.17-27.35-.88-.17-.97-.36-2.19-.36-3.15,0-7.88,4.23-9.63,8.26-9.63s10.72.69,15.66.69c5.36,0,7.04-1.85,7.04-3.51,0-2.27-2.1-3.15-6.33-4.04l-11.44-2.19c-9.5-1.74-14.59-8.32-14.59-15.24,0-8.41,5.97-15.51,17.76-16.73,8.87-.97,19.78.08,25.77.88.17.97.36,2.02.36,3.07,0,7.88-4.14,9.54-8.18,9.54-3.07,0-7.82-.53-13.37-.53s-7.82,1.49-7.82,3.41c0,2.02,2.21,2.8,5.72,3.41l10.91,2.02c11.04,1.87,15.87,8.18,15.87,15.98h.02Z"/><g><g><path class="st0" d="M266.62,133.3c-6.6,0-12.76,3.85-15.56,9.38v17.87c2.82,5.61,8.87,9.38,15.56,9.38,9.73,0,16.96-7.44,16.96-18.31s-7.21-18.31-16.96-18.31h0Z"/><path class="st0" d="M489.06,98.45H179.38c-3.87,0-7.04,3.15-7.04,7v91.09c0,3.85,3.17,7,7.04,7h309.79c3.87,0,7.04-3.15,7.04-7v-91.09c-.11-3.85-3.28-7-7.15-7h0ZM211.92,177.32c-6.52.04-14.53-1.53-19.36-3.36-.61-4.29.69-6.56,3.26-6.56,2.38,0,8.18,2.54,16.27,2.54,8.53,0,11.69-2.99,11.69-6.92,0-2.8-1.24-5.26-8.87-7.36l-8.79-2.35c-9.75-2.54-13.54-7.44-13.54-13.41,0-7.44,5.89-14.02,19.26-14.02,5.97,0,13.45,1.3,18.04,3.07.8,4.2-.53,6.47-3.07,6.47-2.29,0-7.48-2.19-14.78-2.19-7.9,0-10.83,2.71-10.83,6.22,0,2.46,1.14,4.73,8.18,6.75l8.98,2.46c10.03,2.8,14.06,7.44,14.06,14.02,0,7.71-5.97,14.63-20.5,14.63h0ZM268.26,177.36c-7.48,0-13.54-3.51-17.24-8.49v20.85c0,1.93-1.14,3.24-4.48,3.24-1.66,0-3.26-.17-4.04-.44v-65.69c.8-.17,2.38-.44,4.04-.44,3.34,0,4.48,1.22,4.48,3.24v4.73c3.62-5,9.75-8.49,17.24-8.49,12.51,0,23.92,9.63,23.92,25.75s-11.44,25.75-23.92,25.75h0ZM325.86,177.36c-14.59,0-25.5-11.12-25.5-25.75s10.91-25.67,25.5-25.67,25.58,10.95,25.58,25.67-10.91,25.75-25.58,25.75ZM387.7,134.63c-7.13,0-13.18,3.32-16.88,11.04v27.94c0,2.1-1.14,3.24-4.58,3.24-1.41,0-3.07-.17-3.95-.44v-49.57c.8-.17,2.46-.44,3.95-.44,3.43,0,4.58,1.22,4.58,3.24v6.92c4.83-7.36,12.21-11.04,21.46-9.82.06.71.42,2.29.42,3.78,0,3.41-1.41,4.12-5,4.12h0ZM429.97,173.96c-4.31,2.1-9.31,3.41-14.34,3.41-9.86,0-15.74-5.78-15.74-15.41v-42.57c0-2.19,1.24-3.59,4.58-3.59,1.41,0,3.07.36,3.95.53v10.76h19.34c.08.69.36,2.19.36,3.41,0,2.99-1.24,4.04-3.07,4.04h-16.52v26.89c0,5.78,2.73,8.58,8.18,8.58,5,0,7.74-2.19,10.11-2.19s3.68,2.04,3.15,6.16v-.02ZM455.24,177.32c-6.54.04-14.53-1.53-19.36-3.36-.61-4.29.69-6.56,3.26-6.56,2.38,0,8.18,2.54,16.27,2.54,8.53,0,11.69-2.99,11.69-6.92,0-2.8-1.24-5.26-8.87-7.36l-8.79-2.35c-9.75-2.54-13.54-7.44-13.54-13.41,0-7.44,5.89-14.02,19.26-14.02,5.97,0,13.45,1.3,18.04,3.07.8,4.2-.53,6.47-3.07,6.47-2.29,0-7.48-2.19-14.78-2.19-7.9,0-10.83,2.71-10.83,6.22,0,2.46,1.14,4.73,8.18,6.75l8.98,2.46c10.03,2.8,14.06,7.44,14.06,14.02,0,7.71-5.97,14.63-20.5,14.63h0Z"/></g><path class="st0" d="M325.88,133.3c-9.23,0-16.88,6.92-16.88,18.31s7.65,18.39,16.88,18.39c9.31-.08,16.96-7.19,16.96-18.39s-7.65-18.31-16.96-18.31Z"/></g></svg>
-            <svg style="height:24px;width:auto" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg"><defs><style>.st0{fill:#111}.st1{fill:#111;fill-rule:evenodd}</style></defs><path class="st1" d="M86,172.1c0,5.18-2.07,8.2-12.25,8.2-1.32,0-2.54-.09-3.68-.28v-68.99c0-5.28,1.79-10.74,12.06-10.74,1.32,0,2.64.09,3.86.38v71.44h.01ZM127.57,198.77c1.32.66,4.05,1.51,7.54,1.6,5.94.09,9.14-2.17,11.5-7.45l31.67-70.5c-1.32-.66-4.24-1.51-6.6-1.51-4.05-.09-9.52.75-13.01,9.05l-10.27,24.13-20.08-32.7c-1.32-.38-4.52-.94-6.79-.94-7.16,0-11.12,2.64-15.17,7.07l-19.6,21.3,15.74,24.69c2.92,4.52,6.69,6.79,12.91,6.79,4.05,0,7.45-.94,9.05-1.7l-18.94-28.37,13.38-14.23,22.05,34.5-13.38,28.28h0ZM45.76,179.82c12.91-1.41,19.23-8.48,19.23-18.19,0-8.39-5.18-15.17-17.06-17.15l-11.69-2.17c-3.77-.66-6.13-1.51-6.13-3.68s2.45-3.68,8.39-3.68c3.4,0,6.53.19,9.19.34,1.99.12,3.72.22,5.13.22,4.34,0,8.77-1.79,8.77-10.27,0-1.13-.19-2.26-.38-3.3-6.41-.85-18.1-1.98-27.62-.94-12.63,1.32-19.04,8.95-19.04,18,0,7.45,5.47,14.51,15.65,16.4l12.25,2.36c4.52.94,6.79,1.89,6.79,4.34,0,1.79-1.79,3.77-7.54,3.77-2.75,0-6-.21-9.1-.4-2.84-.18-5.56-.35-7.68-.35-4.34,0-8.86,1.89-8.86,10.37,0,1.04.19,2.36.38,3.39,6.41.75,19.98,1.98,29.31.94h.01Z"/><g><path class="st0" d="M474.6,93.77H202.78c-4.15,0-7.54,3.39-7.54,7.54v98.02c0,4.15,3.39,7.54,7.54,7.54h271.82c4.15,0,7.54-3.39,7.54-7.54v-98.02c0-4.15-3.39-7.54-7.54-7.54ZM266.21,174.74c0,2.07-1.23,3.49-4.9,3.49-1.51,0-3.3-.19-4.24-.47v-30.54c0-10.65-5.18-15.74-13.1-15.74-6.13,0-12.72,4.24-15.46,9.24v34.12c0,2.07-1.23,3.49-4.9,3.49-1.51,0-3.3-.19-4.24-.47v-53.53c.85-.19,2.64-.47,4.24-.47,3.68,0,4.9,1.32,4.9,3.49v4.52c3.86-4.81,9.8-8.58,17.62-8.58,10.93,0,20.08,6.88,20.08,22.71v28.75h0ZM327.66,154.28h-41.28c1.22,10.37,8.3,16.12,18.85,16.12,4.52,0,8.11-.85,11.4-1.98.43-.14.82-.26,1.16-.38,1.54-.5,2.31-.75,3.08-.75,2.54,0,4.24,2.07,3.77,6.97-4.81,2.07-12.06,4.43-19.79,4.43-16.68,0-27.9-11.22-27.9-27.9s11.88-27.52,26.39-27.52c16.4,0,24.51,12.72,24.51,25.64.19,1.6.09,3.49-.19,5.37h0ZM397.59,174.26c-.85,3.11-3.2,3.86-6.6,3.86-1.88,0-3.77-.38-5.37-.75l-13.48-43.17-12.63,40.06c-1.04,3.11-3.49,3.86-6.41,3.86-1.88,0-3.96-.38-5.56-.75l-15.08-52.21c1.32-.66,3.77-1.32,5.75-1.32,2.54,0,3.86.75,4.52,3.2l10.65,41h.09l13.19-42.88c1.51-.85,3.58-1.32,5.66-1.32,3.49,0,5.37.75,6.31,3.96l12.25,40.15h.09l10.37-41c.66-2.45,1.98-3.2,4.52-3.2,2.26.09,4.52.75,5.84,1.41l-14.14,49.1h.03ZM438.5,178.6c-6.98.09-15.55-1.6-20.73-3.58-.66-4.62.75-7.07,3.49-7.07,2.54,0,8.77,2.73,17.44,2.73,9.14,0,12.54-3.2,12.54-7.45,0-3.02-1.32-5.66-9.52-7.92l-9.43-2.54c-10.46-2.73-14.51-8.01-14.51-14.42,0-8.01,6.31-15.08,20.64-15.08,6.41,0,14.42,1.41,19.32,3.3.85,4.52-.56,6.97-3.3,6.97-2.45,0-8.01-2.36-15.83-2.36-8.48,0-11.59,2.92-11.59,6.69,0,2.64,1.23,5.09,8.77,7.26l9.62,2.64c10.74,3.02,15.08,8.01,15.08,15.08,0,8.29-6.41,15.74-21.96,15.74h-.03Z"/><path class="st0" d="M303.53,131c-8.29,0-15.74,5.66-17.15,16.21h32.8c-.38-9.14-6.22-16.21-15.65-16.21Z"/></g></svg>
+        <article class="role">
+          <div class="role-top">
+            <span class="role-co">Mindvalley</span>
+            <span class="role-when">2024 – Present · Remote / Global</span>
           </div>
-        </div>
-        <div class="role-period">Nov 2010 – Jan 2022</div>
-        <div class="role-title">Senior Creative</div>
+          <div class="role-title">Creative Director &amp; Head of Content</div>
+          <ul class="bul">
+            <li>Run the entire creative output across content, brand, film, performance marketing and social, working directly with the CEO on strategy, launches and brand direction.</li>
+            <li>Own performance-marketing spend north of $1M a month, and the ROAS that has to justify it.</li>
+            <li>Drove a 77% rise in new-member acquisition off a flagship AI product launch, the strongest product performance in two years.</li>
+            <li>Rebuilt the content model from sales-heavy to trust-first and value-dense; the personalised learning pathway it produced roughly doubled customer lifetime value.</li>
+            <li>Directed the company's highest-rated program ever, an award-winning masterclass staged as a live event at scale.</li>
+            <li>Reinvented the masterclass format into something shorter, denser and far less sales-heavy, protecting brand equity while improving conversion.</li>
+            <li>Built a data initiative that turns audience behaviour into content decisions, so the team makes fewer, better things on purpose.</li>
+            <li>Lead the creative-services team across production, post, design and social, plus headcount and team structure.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="role-top">
+            <span class="role-co">Go City</span>
+            <span class="role-when">2024 · Creative Director</span>
+          </div>
+          <div class="role-title">Creative Director <span class="stat">· 30% growth in month one</span></div>
+          <ul class="bul">
+            <li>Took the creative operation of a global private-equity travel business across thirty-odd cities, found what was quietly gumming it up, and cleared it out.</li>
+            <li>Growth jumped thirty percent in the first month, not from one clever campaign but because the whole operation finally ran clean.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="role-top">
+            <span class="role-co">Veloforte</span>
+            <span class="role-when">2022 – 2023 · Creative Director</span>
+          </div>
+          <div class="role-title">Creative Director <span class="stat">· 93% revenue growth in 18 months</span></div>
+          <ul class="bul">
+            <li>Built the creative team from a blank page and owned every dimension of the brand: identity, tone of voice, packaging, film, B2B partnerships and the ambassador and influencer setup.</li>
+            <li>Directed every shoot from brief to delivery. E-commerce grew 60% year on year; revenue grew 93% in eighteen months.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="role-top">
+            <span class="role-co">Le Blanq</span>
+            <span class="role-when">2021 – 2022 · Creative Director</span>
+          </div>
+          <div class="role-title">Creative Director</div>
+          <ul class="bul">
+            <li>Creative strategy and brand content for an ultra-premium cycling lifestyle brand: luxury travel, proper hospitality and the most beautiful roads on earth. Precision over scale, alongside Veloforte.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="role-top">
+            <span class="role-co">Sky</span>
+            <span class="role-when">2010 – 2021 · Senior Creative</span>
+          </div>
+          <div class="role-title">Senior Creative <span class="stat">· Promax UK Creative of the Year</span></div>
+          <ul class="bul">
+            <li>Eleven years across Sky News, Sports, Entertainment, Movies and Corporate Comms, contributing to Promax UK Agency of the Year.</li>
+            <li>Led cycling work that helped get 1.7 million people in the UK onto a bike for the first time, and contributed to Sky Ocean Rescue.</li>
+          </ul>
+        </article>
+      </section>
+
+      <div class="grid2">
+        <section>
+          <h2 class="section-h">Skills &amp; Expertise</h2>
+          <div class="skillgroup"><h4>Creative Direction</h4><p>Brand identity, art direction, cinematic film, masterclass production, content architecture, campaign concepting.</p></div>
+          <div class="skillgroup"><h4>Content Strategy</h4><p>Value-driven frameworks, trust-first storytelling, snackable lesson design, personalised learning pathways, UGC strategy.</p></div>
+          <div class="skillgroup"><h4>Performance Marketing</h4><p>Ad-creative strategy, ROAS optimisation, VSL production, funnel design, cold-audience hook frameworks.</p></div>
+        </section>
+        <section>
+          <h2 class="section-h">&nbsp;</h2>
+          <div class="skillgroup"><h4>AI &amp; Technology</h4><p>AI content workflows, AI business strategy, prompt engineering, custom GPT design, AI-assisted curriculum.</p></div>
+          <div class="skillgroup"><h4>Leadership &amp; Operations</h4><p>Creative-services leadership across production, design and social; headcount planning; cross-functional delivery.</p></div>
+          <div class="skillgroup"><h4>Social Media</h4><p>YouTube strategy, viral content frameworks, hook optimisation, community-led growth, influencer and UGC.</p></div>
+        </section>
       </div>
-      <ul class="role-bullets">
-        <li>Eleven years as a core creative across Sky Sports, Sky News, Sky Entertainment, and Sky Cinema — contributing to Promax UK Agency of the Year.</li>
-        <li>Directed campaigns and productions alongside Oscar-winning actors and the UK's biggest studios.</li>
-        <li>Led the creative behind Sky's cycling campaigns, directly inspiring 1.7 million people to ride; including the landmark content communicating Sir Bradley Wiggins' historic 2012 Tour de France victory and Olympic gold medal.</li>
-        <li>Contributed to Sky Ocean Rescue, a behaviour-change campaign on single-use plastics reaching millions of viewers.</li>
-      </ul>
+
+      <div class="sign">Gareth</div>
+      <p class="foot">References and portfolio available on request · garethwintercreativedirector.com</p>
+
     </div>
-
+  </main>
   </div>
-</section>
-
-<!-- ─── SKILLS ───────────────────────────────────────────── -->
-<section class="section">
-  <div class="section-title">Skills</div>
-  <div class="skills-grid">
-    <div class="skill">Creative Direction &amp; Brand Strategy</div>
-    <div class="skill">Film Direction &amp; Production</div>
-    <div class="skill">AI-Powered Creative Systems</div>
-    <div class="skill">Copywriting &amp; Scriptwriting</div>
-    <div class="skill">Brand Architecture &amp; Visual Identity</div>
-    <div class="skill">E-commerce &amp; Performance Marketing</div>
-    <div class="skill">Social Media &amp; Paid Advertising</div>
-    <div class="skill">Team Leadership &amp; Culture Building</div>
-    <div class="skill">Adobe Creative Suite (Fluent)</div>
-  </div>
-</section>
-
-<!-- ─── FOOTER ───────────────────────────────────────────── -->
-<div class="footer">
-  <div>
-    <div class="footer-label">Portfolio</div>
-    <div class="footer-value">garethwintercreativedirector.com</div>
-  </div>
-  <div>
-    <div class="footer-label">Contact</div>
-    <div class="footer-value">
-      07414 716 933 &nbsp;·&nbsp; garethwrwinter@outlook.com<br>
-      LinkedIn — add URL
-    </div>
-  </div>
-</div>
-
 </body>
 </html>
