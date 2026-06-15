@@ -240,18 +240,25 @@
   .philo__q{font-family:var(--font-display);font-style:italic;font-size:clamp(1.6rem,4vw,2.75rem);font-weight:300;line-height:1.3;letter-spacing:-0.01em;color:#fff;max-width:720px;border-left:2px solid var(--clay);padding-left:2rem;}
 
   /* ══ On set strip ═════════════════════════════════════════ */
-  .onset{background:var(--ink);padding:clamp(2rem,5vw,3.5rem) 0;}
-  .onset__label{font-family:var(--font-sans);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1.25rem;}
-  .onset__carousel{position:relative;margin-top:1.25rem;}
-  .onset__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;gap:3px;}
+  .onset{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0;}
+  .onset__head{max-width:var(--max-w);margin:0 auto 1.7rem;padding:0 var(--gap);}
+  .onset__head .eyebrow{margin-bottom:.45rem;}
+  .onset__head p{font-family:var(--font-display);font-style:italic;font-size:clamp(1rem,2vw,1.3rem);font-weight:300;color:rgba(255,255,255,.6);}
+  .onset__carousel{position:relative;}
+  .onset__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;gap:16px;}
   .onset__track::-webkit-scrollbar{display:none;}
-  .onset__track figure{flex:0 0 calc(25% - 3px);overflow:hidden;aspect-ratio:4/3;background:#1a1a1a;scroll-snap-align:start;}
-  @media (max-width:720px){.onset__track figure{flex:0 0 calc(80% - 3px);}}
-  .onset__track img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
-  .onset__track figure:hover img{transform:scale(1.02);}
-  .onset__dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.25rem;}
-  .onset__dot{width:6px;height:6px;border-radius:50%;border:none;background:rgba(255,255,255,.2);cursor:pointer;padding:0;transition:background .2s,transform .2s;}
-  .onset__dot.active{background:var(--forest-soft);transform:scale(1.3);}
+  .onset__track figure{flex:0 0 clamp(280px,38%,460px);overflow:hidden;aspect-ratio:3/2;background:#15120f;scroll-snap-align:start;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,.08);}
+  @media (max-width:720px){.onset__track figure{flex:0 0 84%;}}
+  .onset__track img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .onset__track figure:hover img{transform:scale(1.04);}
+  .onset__arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(21,18,15,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,border-color .2s;}
+  .onset__arrow:hover{background:var(--forest);border-color:var(--forest);}
+  .onset__arrow--prev{left:calc(var(--gap) - 4px);}
+  .onset__arrow--next{right:calc(var(--gap) - 4px);}
+  @media (max-width:720px){.onset__arrow{display:none;}}
+  .onset__dots{display:flex;justify-content:center;gap:.55rem;margin-top:1.7rem;}
+  .onset__dot{width:7px;height:7px;border-radius:50%;border:none;background:rgba(255,255,255,.2);cursor:pointer;padding:0;transition:background .2s,transform .2s;}
+  .onset__dot.active{background:var(--clay);transform:scale(1.35);}
 
   /* ══ Instagram ════════════════════════════════════════════ */
   .ig{background:var(--paper);padding:clamp(5rem,11vw,9rem) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
@@ -511,26 +518,31 @@
 
   <!-- ── On set strip ── -->
   <section class="onset">
-    <div class="container"><p class="onset__label">On Set</p></div>
+    <div class="onset__head reveal">
+      <p class="eyebrow eyebrow--clay">On Set</p>
+      <p>Directing, on stage and behind the camera.</p>
+    </div>
     <div class="onset__carousel">
+      <button class="onset__arrow onset__arrow--prev" id="onsetPrev" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="onset__arrow onset__arrow--next" id="onsetNext" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
       <div class="onset__track" id="onsetTrack">
-        <figure><img src="/sky-production/sky-onset-1.jpg" alt="Gareth Winter directing on set for Sky cycling production" loading="lazy" /></figure>
-        <figure><img src="/sky-production/sky-onset-2.jpg" alt="Sky cycling shoot production" loading="lazy" /></figure>
         <figure><img src="/mvu-onset-1.jpg" alt="Gareth Winter on stage at Mindvalley U Amsterdam 2025" loading="lazy" /></figure>
-        <figure><img src="/mvu-onset-2.jpg" alt="Gareth Winter presenting at Mindvalley U Amsterdam 2025" loading="lazy" /></figure>
+        <figure><img src="/sky-production/sky-onset-1.jpg" alt="Gareth Winter directing on set for Sky cycling production" loading="lazy" /></figure>
         <figure><img src="/sky-production/sky-onset-3.jpg" alt="Team Sky on-set production" loading="lazy" /></figure>
-        <figure><img src="/sky-production/sky-onset-4.jpg" alt="Sky on-set direction, cycling" loading="lazy" /></figure>
+        <figure><img src="/mvu-onset-2.jpg" alt="Gareth Winter presenting at Mindvalley U Amsterdam 2025" loading="lazy" /></figure>
+        <figure><img src="/sky-production/sky-onset-2.jpg" alt="Sky cycling shoot production" loading="lazy" /></figure>
         <figure><img src="/DSCF8534.jpg" alt="Gareth Winter on set, cycling production" loading="lazy" style="object-position:30% center" /></figure>
+        <figure><img src="/sky-production/sky-onset-4.jpg" alt="Sky on-set direction, cycling" loading="lazy" /></figure>
       </div>
-      <div class="onset__dots" id="onsetDots">
-        <button class="onset__dot active" data-index="0" aria-label="Photo 1"></button>
-        <button class="onset__dot" data-index="1" aria-label="Photo 2"></button>
-        <button class="onset__dot" data-index="2" aria-label="Photo 3"></button>
-        <button class="onset__dot" data-index="3" aria-label="Photo 4"></button>
-        <button class="onset__dot" data-index="4" aria-label="Photo 5"></button>
-        <button class="onset__dot" data-index="5" aria-label="Photo 6"></button>
-        <button class="onset__dot" data-index="6" aria-label="Photo 7"></button>
-      </div>
+    </div>
+    <div class="onset__dots" id="onsetDots">
+      <button class="onset__dot active" data-index="0" aria-label="Photo 1"></button>
+      <button class="onset__dot" data-index="1" aria-label="Photo 2"></button>
+      <button class="onset__dot" data-index="2" aria-label="Photo 3"></button>
+      <button class="onset__dot" data-index="3" aria-label="Photo 4"></button>
+      <button class="onset__dot" data-index="4" aria-label="Photo 5"></button>
+      <button class="onset__dot" data-index="5" aria-label="Photo 6"></button>
+      <button class="onset__dot" data-index="6" aria-label="Photo 7"></button>
     </div>
   </section>
 
@@ -615,7 +627,7 @@
 
     document.querySelectorAll('.work__thumb').forEach(function(thumb){var m=(thumb.style.backgroundImage||'').match(/vi\/([^/]+)\/maxresdefault/);if(!m)return;var id=m[1],p=new Image();p.onload=function(){if(this.naturalWidth<=120){thumb.style.backgroundImage='url(https://img.youtube.com/vi/'+id+'/hqdefault.jpg)';}};p.src='https://img.youtube.com/vi/'+id+'/maxresdefault.jpg';});
 
-    (function(){var track=document.getElementById('onsetTrack'),dots=document.querySelectorAll('#onsetDots .onset__dot');if(!track)return;var total=track.children.length,current=0,timer;function w(){return track.firstElementChild.offsetWidth+3;}function go(i){current=((i%total)+total)%total;track.scrollTo({left:current*w(),behavior:'smooth'});dots.forEach(function(d,n){d.classList.toggle('active',n===current);});}function adv(){go(current+1);}function start(){timer=setInterval(adv,3000);}function stop(){clearInterval(timer);}dots.forEach(function(d){d.addEventListener('click',function(){stop();go(parseInt(d.dataset.index));start();});});track.addEventListener('mouseenter',stop);track.addEventListener('mouseleave',start);track.addEventListener('scroll',function(){var idx=Math.round(track.scrollLeft/w());dots.forEach(function(d,n){d.classList.toggle('active',n===idx);});current=idx;},{passive:true});start();})();
+    (function(){var track=document.getElementById('onsetTrack'),dots=document.querySelectorAll('#onsetDots .onset__dot');if(!track)return;var total=track.children.length,current=0,timer;function w(){return track.firstElementChild.offsetWidth+16;}function sync(i){dots.forEach(function(d,n){d.classList.toggle('active',n===i);});}function go(i){current=((i%total)+total)%total;track.scrollTo({left:current*w(),behavior:'smooth'});sync(current);}function adv(){go(current+1);}function start(){timer=setInterval(adv,4500);}function stop(){clearInterval(timer);}dots.forEach(function(d){d.addEventListener('click',function(){stop();go(parseInt(d.dataset.index));start();});});var pv=document.getElementById('onsetPrev'),nx=document.getElementById('onsetNext');if(pv)pv.addEventListener('click',function(){stop();go(current-1);start();});if(nx)nx.addEventListener('click',function(){stop();go(current+1);start();});track.addEventListener('mouseenter',stop);track.addEventListener('mouseleave',start);track.addEventListener('scroll',function(){var idx=Math.round(track.scrollLeft/w());current=idx;sync(idx);},{passive:true});start();})();
 
     document.querySelectorAll('.reel-player').forEach(function(p){var v=p.querySelector('video'),b=p.querySelector('.reel-play');p.addEventListener('click',function(){if(v.paused){v.play();b.classList.add('hidden');}else{v.pause();b.classList.remove('hidden');}});v.addEventListener('ended',function(){b.classList.remove('hidden');});});
 
