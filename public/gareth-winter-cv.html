@@ -35,6 +35,8 @@
 
   /* Header */
   .head{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:end;}
+  .head-id{display:flex;align-items:center;gap:1.15rem;}
+  .avatar{width:68px;height:68px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 0 0 1px var(--line-strong);}
   .name{font-family:var(--display);font-weight:300;font-size:36pt;letter-spacing:-0.035em;line-height:.9;color:var(--ink);}
   .title{font-family:var(--sans);font-weight:600;font-size:9pt;letter-spacing:.01em;color:var(--forest);margin-top:.65rem;max-width:30em;}
   .contact{text-align:right;font-size:8pt;color:var(--ink-2);line-height:1.75;white-space:nowrap;}
@@ -108,9 +110,12 @@
 
     <header>
       <div class="head">
-        <div>
-          <div class="name">Gareth Winter</div>
-          <div class="title">Creative Director &amp; Head of Content · Brand, Film, Performance Marketing &amp; AI</div>
+        <div class="head-id">
+          <img class="avatar" src="/gareth-avatar.jpg" alt="Gareth Winter" />
+          <div>
+            <div class="name">Gareth Winter</div>
+            <div class="title">Creative Director &amp; Head of Content · Brand, Film, Performance Marketing &amp; AI</div>
+          </div>
         </div>
         <div class="contact">
           <div class="av">Commutes to London · Available globally</div>
