@@ -49,7 +49,10 @@
   }
   </script>
 
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="preload" as="image" type="image/webp" imagesrcset="/img/hero-800.webp 800w, /img/hero-1400.webp 1400w, /img/hero-2200.webp 2200w" imagesizes="100vw" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -257,6 +260,13 @@
   .card h3{margin:2.5rem 0 0;font-size:clamp(1.4rem,2vw,1.75rem);font-weight:700;letter-spacing:-.035em;line-height:1.05}
   .card p{margin:auto 0 0;color:var(--on-dark-2);font-size:16px}
   @media (max-width:880px){.cards{grid-template-columns:1fr}.card{min-height:0}.card h3{margin-top:1.5rem}}
+  .live{margin-top:clamp(4rem,8vw,6.5rem);display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(.75rem,1.5vw,1.25rem);align-items:end}
+  .live figure{margin:0}
+  .live img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:6px}
+  .live__note{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:1rem 2rem;flex-wrap:wrap;margin-top:.5rem}
+  .live__note p{margin:0;max-width:40rem;font-size:clamp(1.05rem,1.4vw,1.25rem);line-height:1.45;color:rgba(242,238,230,.86)}
+  .live__note .label{color:var(--on-dark-2)}
+  @media (max-width:720px){.live{grid-template-columns:1fr}}
 
   /* ── origin ── */
   .origin{padding:clamp(5rem,12vw,10rem) 0}
@@ -571,6 +581,18 @@
         <article class="card rv d1"><span class="label">Judgement</span><h3>People keep the final word.</h3><p>AI handles the volume and the endless variations. People keep the taste. Nobody hands the brand’s keys to an algorithm and wanders off for a coffee.</p></article>
         <article class="card rv d2"><span class="label">Proof</span><h3>Running in production now.</h3><p>I’m doing this for a platform that serves three million people. An AI-led launch I shaped drove a 77% jump in new members, so the systems earn their keep.</p></article>
       </div>
+      <div class="live">
+        <figure class="rv">
+          <picture><source type="image/webp" srcset="/img/priestley-room-800.webp 800w, /img/priestley-room-1400.webp 1400w" sizes="(max-width:720px) 100vw, 58vw" /><img src="/img/priestley-room-1400.jpg" srcset="/img/priestley-room-800.jpg 800w, /img/priestley-room-1400.jpg 1400w" sizes="(max-width:720px) 100vw, 58vw" width="1400" height="933" alt="Gareth Winter and Daniel Priestley on stage at Mindvalley, an AI prompt on the big screen and a packed audience in front of them" loading="lazy" decoding="async" /></picture>
+        </figure>
+        <figure class="rv d1">
+          <picture><source type="image/webp" srcset="/img/priestley-duo-800.webp 800w, /img/priestley-duo-1400.webp 1400w" sizes="(max-width:720px) 100vw, 42vw" /><img src="/img/priestley-duo-1400.jpg" srcset="/img/priestley-duo-800.jpg 800w, /img/priestley-duo-1400.jpg 1400w" sizes="(max-width:720px) 100vw, 42vw" width="1400" height="933" alt="Gareth Winter and Daniel Priestley on stage at Mindvalley, working through an AI prompt built on Priestley’s Oversubscribed methods" loading="lazy" decoding="async" /></picture>
+        </figure>
+        <div class="live__note rv">
+          <p>Live on stage with Daniel Priestley, founder of Dent Global and author of <em>Oversubscribed</em>, turning his growth playbook into working AI prompts in front of a full room.</p>
+          <span class="label">On stage with Daniel Priestley · Mindvalley</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -643,18 +665,18 @@
       <div class="feed__top">
         <div>
           <p class="sh__no label rv">08 · Live from the feed</p>
-          <h2 class="h2 rv" style="margin-top:1.25rem">@mindvalley</h2>
-          <p class="rv">The brand I direct, out in the wild. Three million people watching, no pressure.</p>
+          <h2 class="h2 rv" style="margin-top:1.25rem">@garethwinter</h2>
+          <p class="rv">My own channel, where every idea gets tested on me first. These six are its best performers: 3.6 million views between them.</p>
         </div>
-        <a href="https://www.instagram.com/mindvalley/" target="_blank" rel="noopener noreferrer" class="btn btn--ink rv">Follow on Instagram <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        <a href="https://www.instagram.com/garethwinter/" target="_blank" rel="noopener noreferrer" class="btn btn--ink rv">Follow on Instagram <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
       </div>
       <div class="igs" id="igs">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DYUSYoEAI2W/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZhPg9YiKVf/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZff0PdGF7p/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZfI1hKAp61/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZc5lCWAQFF/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZcx1hKEzqN/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Da5hFm1IE0f/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dc3R_nwOLMy/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcRIc7EoHn_/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dcd7BkcoLih/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DafZGECOrgB/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DYFPDgcIPy4/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
       </div>
     </div>
   </section>
@@ -671,7 +693,7 @@
       <div class="socials">
         <a href="https://www.linkedin.com/in/gareth-winter-20035221/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         <a href="https://instagram.com/garethwinter" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-        <a href="/gareth-winter-cv.html" target="_blank" rel="noopener">Download CV ↗</a>
+        <a href="/gareth-winter-cv.pdf" download="Gareth-Winter-CV.pdf">Download CV ↓</a>
       </div>
     </div>
   </section>
